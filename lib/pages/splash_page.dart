@@ -7,8 +7,9 @@ class SplashPage extends StatelessWidget {
   Widget build(BuildContext context) {
       return Scaffold(
         body: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset('pirt_logo.png'), 
+            Image.asset('images/pirt_logo.png'), 
             ElevatedButton(
               onPressed: (){}, 
               child: const Text('This is Splash Page!')
