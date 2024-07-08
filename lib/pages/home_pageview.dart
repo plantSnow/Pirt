@@ -19,8 +19,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  // 当前页面
-  int currentIndex = 1;
+  // 当前页面, 默认为首页
+  int currentIndex = 0;
   // 定义子页面集
   late List<Widget> pages;
   // 控制器
