@@ -13,19 +13,19 @@
 
 ## 功能设计与初始规划
 
-* 旅行计划功能
+* *旅行计划功能*
 
   更接近于一个备忘录而非旅行 APP
 
   给出旅行准备中的代办项目，由用户自行填写
 
-* 实时提醒功能
+* *实时提醒功能*
 
   在用户记录的旅行计划时间段内，将用户的备忘备注提示在主页面显眼位置
 
   给用户提供天气、车票等实时更新的信息
 
-* 记录回忆功能
+* *记录回忆功能*
 
   给用户提供文本编辑平台，可以记下旅行感受、照片，以供未来回顾
 
@@ -37,12 +37,12 @@
 
 #### logo
 
-* version 1：由组长宁中昊独立绘制
+* version 1：
+![PirtLogo](./assets/images/pirt_logo.png)
 
 #### 页面
 
 * 模版来源：Pixso
-* 修改绘制：宁中昊、韩俊宇
 
 ## 开发过程
 
@@ -50,9 +50,37 @@
 
 #### 前端部分
 
-* [ ] 把图片做成程序，确定组件安排分布规划，完成样式的实现（负责人：宁中昊、王昕远）
+* [ ] 把图片做成程序，确定组件安排分布规划，完成样式的实现
 * [ ] 通过 `Flutter` 框架中的 `BottomNavigator`、`TabView`、`route` 完成页面跳转的实现
 
 #### 后端部分
 
-* [ ] 用数据库技术 `MySQL` 与 `Dart` 语言（待定，也可能会使用其他常用的后端语言与技术，如较为简单的sql甚至csv）完成数据库构建与应用后台功能实现
+* [ ] 用数据库技术 `MySQL` 与 `Dart` 语言（待定，也可能会使用其他常用的后端语言与技术，如较为简单的 `sql` 甚至 `csv`）完成数据库构建与应用后台功能实现
+
+#### 项目结构
+
+``` stylus
+lib/
+├── models/
+│   ├── travel_plan.dart
+│   └── travel_log.dart
+├── pages/
+│   ├── edit_plan.dart
+│   ├── home_screen.dart
+│   ├── log_screen.dart
+│   └── plan_detail_screen.dart
+├── services/
+│   ├── api_service.dart
+│   ├── db_service.dart
+│   └── notification_service.dart
+├── main.dart
+
+assets/
+├── images/
+│   ├── pirt_logo.png
+├── fonts/
+│   ├── tobeset/
+│   │   ├── tobeset.json
+│   │   └── tobeset.ttf
+
+```
