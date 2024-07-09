@@ -73,7 +73,7 @@ lib/
 │   ├── api_service.dart
 │   ├── db_service.dart
 │   └── notification_service.dart
-├── main.dart
+└── main.dart
 
 assets/
 ├── images/
