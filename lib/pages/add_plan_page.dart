@@ -5,8 +5,7 @@ class AddPlan extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Column(
+    return const Column(
         children: [
           Text(
             "计划名称", 
@@ -42,7 +41,6 @@ class AddPlan extends StatelessWidget {
           Divider(), 
           
         ],
-      )
-    ); 
+      ); 
   }
 }
