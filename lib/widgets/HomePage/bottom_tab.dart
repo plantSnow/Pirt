@@ -18,13 +18,27 @@ class _BottomTabsState extends State<BottomTabs> {
     AddPlan(), 
     User(), 
   ];
-
   @override
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.of(context).size.height;
     double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
-      // appBar: AppBar(title: const Text('Pirt Trip'),),
+      appBar: _currentIndex==1? AppBar(
+        leading: IconButton(
+          onPressed: (){
+            setState(() {
+              _currentIndex == 0;
+            });
+          }, 
+          icon: const Icon(Icons.arrow_back_rounded)
+        ),
+        title: const Text(
+          '新建', 
+          style: TextStyle(
+            fontFamily: 'ShuHei'
+          ),
+        ),
+      ): null,
       bottomNavigationBar: SizedBox(
         height: 50,
         child: BottomNavigationBar(
@@ -59,6 +73,7 @@ class _BottomTabsState extends State<BottomTabs> {
               icon: IconButton(
                 onPressed: (){
                   setState(() {
+                    // TODO: 这里不对, 应该用路由引入新的页面, 底部导航不再不显示, 但是我不会用路由TAT
                     _currentIndex = 1;
                   });
                 },  
@@ -86,7 +101,7 @@ class _BottomTabsState extends State<BottomTabs> {
         padding: const EdgeInsets.all(10),
         decoration: BoxDecoration(
           color: Colors.white, 
-          borderRadius: BorderRadius.circular(100), 
+          borderRadius: BorderRadius.circular(100), //TODO: 它弄不圆QAQ
         ),
         child: FloatingActionButton(
           backgroundColor: const Color(0xff5b67ca),
