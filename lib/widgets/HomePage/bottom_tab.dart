@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '/pages/home_page.dart';
 import '/pages/add_plan_page.dart';
 import '/pages/user_page.dart';
+import '/my_icons.dart';
 
 class BottomTabs extends StatefulWidget {
   const BottomTabs({super.key});
@@ -65,7 +66,7 @@ class _BottomTabsState extends State<BottomTabs> {
                     _currentIndex = 0;
                   });
                 }, 
-                icon: const Icon(Icons.home_outlined), 
+                icon: const Icon(MyIcons.home, size: 28,), 
                 ), 
               label: '首页', 
             ), 
@@ -88,7 +89,7 @@ class _BottomTabsState extends State<BottomTabs> {
                     _currentIndex = 2;
                   });
                 }, 
-                icon: const Icon(Icons.settings_outlined), 
+                icon: const Icon(Icons.account_circle_outlined), 
                 ), 
               label: '设置',
             ),  

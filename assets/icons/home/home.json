@@ -1,0 +1,16 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "imyIcons",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "33986999",
+      "name": "首页-置灰",
+      "font_class": "shouye-zhihui",
+      "unicode": "e61d",
+      "unicode_decimal": 58909
+    }
+  ]
+}

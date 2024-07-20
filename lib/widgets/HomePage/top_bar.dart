@@ -56,7 +56,7 @@ class _TopBarState extends State<TopBar> {
                         width: 36,
                         height: 36,
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(14),//TODO: 图片圆角实现失败
+                          borderRadius: BorderRadius.circular(14),
                           boxShadow: const [
                             BoxShadow(
                               color: Color(0xfff1f6ff),
@@ -95,7 +95,6 @@ class _TopBarState extends State<TopBar> {
                 color: Color(0xff12175e),
                 fontSize: 28,
                 fontFamily: "Roboto",//TODO: 字体待更改
-                fontWeight: FontWeight.w700,
               ),
             ),
           ),

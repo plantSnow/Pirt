@@ -97,5 +97,10 @@ flutter:
     - family: DingTalk
       fonts:
         - asset: assets/fonts/cn/DingTalk-JinBuTi.ttf
+
+    - family: MyIcons
+      fonts:
+        - asset: assets/icons/home/home.ttf
+        - asset: assets/icons/details/details.ttf
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
