@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// 文字与图标显示
 class NameAndTimeinPlanDetails extends StatelessWidget {
   final int displayType;
 
@@ -50,7 +51,7 @@ class NameAndTimeinPlanDetails extends StatelessWidget {
     );
   }
 }
-
+// 文本按钮
 class MyTextButton extends StatelessWidget {
   final String textForButton;
   final List colorsForButton;
@@ -114,7 +115,7 @@ class PlanDetails extends StatelessWidget {
         decoration: BoxDecoration(
           color: const Color(0xfff8fafc), 
           borderRadius: BorderRadius.circular(15), 
-          border: Border.all(color: colorsToBeChosen[displayType][0]), 
+          // border: Border.all(color: colorsToBeChosen[displayType][0]), 
         ),
         child: Stack(children: [
           Positioned(
@@ -153,7 +154,7 @@ class PlanDetails extends StatelessWidget {
             // 右上角按钮, 弹出详细介绍窗口  
             child: IconButton(
               iconSize: 20,
-              onPressed: (){}, 
+              onPressed: (){}, //TODO: 弹出窗口
               icon: const Icon(
                 Icons.book, 
                 color: Color(0xff9aa8c7),
@@ -164,7 +165,7 @@ class PlanDetails extends StatelessWidget {
             right: (5/375)*screenWidth,
             bottom: (5/812)*screenHeight,
             child: IconButton(
-              onPressed: (){}, 
+              onPressed: (){}, //TODO: 弹出窗口
               icon: const Icon(
                 Icons.add, 
                 color: Color(0xff9aa8c7),
@@ -173,7 +174,7 @@ class PlanDetails extends StatelessWidget {
           )
         ])
       ), 
-      SizedBox(height: (30/812)*screenHeight,)
+      SizedBox(height: (15/812)*screenHeight,)
     ]);
   }
 }

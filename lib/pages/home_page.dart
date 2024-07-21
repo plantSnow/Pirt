@@ -16,11 +16,25 @@ class HomePage extends StatelessWidget {
       child: ListView(
         children: [
           const TopBar(),  
-          SizedBox(height: (50/812)*screenHeight,), 
+          SizedBox(
+            height: (50/812)*screenHeight,), 
           const TextShow(boldText: '下一趟旅途', text: '左滑查看过往留下的痕迹~'), 
           SizedBox(
             height: (245/812)*screenHeight,
             width: (335/375)*screenWidth,
+            child: Container(
+              width: 81.64,
+              height: 93.82,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(8),
+                gradient: const LinearGradient(
+                  begin: Alignment.topCenter, 
+                  end: Alignment.bottomCenter, 
+                  colors: [Color(0xff9ca5f2), Color(0x009ca5f2)], 
+                ),
+              ),
+            ),
+          
           ),
           const TextShow(boldText: 'DAY1', text: '上拉查看全部行程安排'), 
           // SizedBox(
