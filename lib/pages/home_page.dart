@@ -5,7 +5,8 @@ import '../widgets/HomePage/text_show.dart';
 import '../widgets/HomePage/plan_detail.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+  final String info;
+  const HomePage({super.key, required this.info});
 
   @override
   Widget build(BuildContext context) {
@@ -18,11 +19,14 @@ class HomePage extends StatelessWidget {
       // TODO: 这里的页面滑动方式不对
       child: ListView(
         children: [
-          const TopBar(),  
+          const TopBar(
+            greetingText: "早上好，种下大雪",
+            userChangableText: "可自定义文案",
+          ),  
           SizedBox(
             height: (50/812)*screenHeight,), 
           const TextShow(boldText: '下一趟旅途', text: '左滑查看过往留下的痕迹~'), 
-          const InfoDisplay(info: '出行时间 - 2024/3/2\n距今还有 11 天\n目的地 - 广东/深圳\n天气： 获取中···',), 
+          InfoDisplay(info: info,), 
           const TextShow(boldText: 'DAY1', text: '上拉查看全部行程安排'), 
           // SizedBox(
             // width: screenWidth,

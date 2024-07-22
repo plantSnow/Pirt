@@ -1,22 +1,25 @@
 import 'package:flutter/material.dart';
 
-class TopBar extends StatefulWidget {
-  const TopBar({super.key});
+class TopBar extends StatefulWidget { 
+  final String greetingText;
+  final String userChangableText;
+  const TopBar({super.key, required this.greetingText, required this.userChangableText});
 
   @override
-  State<TopBar> createState() => _TopBarState();
+  // ignore: no_logic_in_create_state
+  State<TopBar> createState() => _TopBarState(greetingText: greetingText, userChangableText: userChangableText);
 }
 
 class _TopBarState extends State<TopBar> {
+  String greetingText;
+  String userChangableText;
+
+  _TopBarState({required this.greetingText, required this.userChangableText});
   @override
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.of(context).size.height;
     double screenWidth = MediaQuery.of(context).size.width;
     // TODO: 文案待更改
-    // ignore: constant_identifier_names
-    const String GreetingText = "早上好，种下大雪";
-    // ignore: constant_identifier_names
-    const String UserChangableText = "可自定义文案";
     return Container(
       //顶部显示栏的背景颜色
       width: (360/375)*screenWidth,
@@ -38,8 +41,7 @@ class _TopBarState extends State<TopBar> {
             child: SizedBox(
               width: (40/360)*screenWidth,
               height: (40/360)*screenWidth,
-              child: Stack(
-                children: [
+              child: Stack(children: [
                   Positioned.fill(
                     child: Align(
                       alignment: Alignment.bottomRight,
@@ -78,9 +80,9 @@ class _TopBarState extends State<TopBar> {
           Positioned(
             left: (30/375)*screenWidth,
             top: (80/812)*screenHeight,
-            child: const Text(
-              UserChangableText,
-              style: TextStyle(
+            child: Text(
+              userChangableText,
+              style: const TextStyle(
                 color: Color(0xff575757),
                 fontSize: 14,
               ),
@@ -89,9 +91,9 @@ class _TopBarState extends State<TopBar> {
           Positioned(
             left: (15/375)*screenWidth,
             top: (20/812)*screenHeight,
-            child: const Text(
-              GreetingText,
-              style: TextStyle(
+            child: Text(
+              greetingText,
+              style: const TextStyle(
                 color: Color(0xff12175e),
                 fontSize: 28,
                 fontFamily: "Roboto",//TODO: 字体待更改
