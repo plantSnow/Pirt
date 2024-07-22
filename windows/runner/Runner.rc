@@ -89,13 +89,13 @@ BEGIN
     BEGIN
         BLOCK "040904e4"
         BEGIN
-            VALUE "CompanyName", "com.hitsz" "\0"
-            VALUE "FileDescription", "pirt" "\0"
+            VALUE "CompanyName", "com.ning" "\0"
+            VALUE "FileDescription", "try_flutter_run_error" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "pirt" "\0"
-            VALUE "LegalCopyright", "Copyright (C) 2024 com.hitsz. All rights reserved." "\0"
-            VALUE "OriginalFilename", "pirt.exe" "\0"
-            VALUE "ProductName", "pirt" "\0"
+            VALUE "InternalName", "try_flutter_run_error" "\0"
+            VALUE "LegalCopyright", "Copyright (C) 2024 com.ning. All rights reserved." "\0"
+            VALUE "OriginalFilename", "try_flutter_run_error.exe" "\0"
+            VALUE "ProductName", "try_flutter_run_error" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

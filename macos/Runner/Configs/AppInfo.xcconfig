@@ -5,10 +5,10 @@
 // 'flutter create' template.
 
 // The application's name. By default this is also the title of the Flutter window.
-PRODUCT_NAME = pirt
+PRODUCT_NAME = try_flutter_run_error
 
 // The application's bundle identifier
-PRODUCT_BUNDLE_IDENTIFIER = com.hitsz.pirt
+PRODUCT_BUNDLE_IDENTIFIER = com.ning.tryFlutterRunError
 
 // The copyright displayed in application information
-PRODUCT_COPYRIGHT = Copyright © 2024 com.hitsz. All rights reserved.
+PRODUCT_COPYRIGHT = Copyright © 2024 com.ning. All rights reserved.

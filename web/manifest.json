@@ -1,11 +1,11 @@
 {
-    "name": "pirt",
-    "short_name": "pirt",
+    "name": "try_flutter_run_error",
+    "short_name": "try_flutter_run_error",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A Freshman Project by 1003B in HITSZ",
+    "description": "A new Flutter project.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

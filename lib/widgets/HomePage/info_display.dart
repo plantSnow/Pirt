@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-// TODO: 稀烂的, 功能完全没做出来, 这只是个图形
+// TODO: 稀烂的, 功能完全没做出来, 这只是个图形, 这根条不太能做啊
 class InfoArrow extends StatefulWidget {
   const InfoArrow({super.key});
 
@@ -11,52 +11,54 @@ class InfoArrow extends StatefulWidget {
 class _InfoArrowState extends State<InfoArrow> {
   @override
   Widget build(BuildContext context) {
+    double screenHeight = MediaQuery.of(context).size.height;
+    double screenWidth = MediaQuery.of(context).size.width;
     return SizedBox(
-    width: 324.54,
-    height: 9.67,
-    child: Stack(
-        children:[
-            Positioned.fill(
-                child: Align(
-                    alignment: Alignment.topRight,
-                    child: Container(
-                        width: 129.43,
-                        height: 9.67,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(8),
-                            color: const Color(0xfff2f3f5),
-                        ),
-                    ),
+      width: (300/375)*screenWidth,
+      height: (9.67/812)*screenHeight,
+      child: Stack(
+        children: [
+          Positioned.fill(
+            child: Align(
+              alignment: Alignment.topRight,
+              child: Container(
+                width: (300/375)*screenWidth,
+                height: (9.67/812)*screenHeight,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(8),
+                  color: const Color(0xfff2f3f5),
                 ),
+              ),
             ),
-            Positioned(
-                left: 98.52,
-                top: 0,
-                child: Container(
-                    width: 129.43,
-                    height: 9.67,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(8),
-                        color: const Color(0xff7d88e7),
-                    ),
+          ),
+          Positioned(
+            left: (70/375)*screenWidth,
+            top: 0,
+            child: Container(
+              width: (150/375)*screenWidth,
+              height: (9.67/812)*screenHeight,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(8),
+                color: const Color(0xff7d88e7),
+              ),
+            ),
+          ),
+          Positioned.fill(
+            child: Align(
+              alignment: Alignment.topLeft,
+              child: Container(
+                width: (90/375)*screenWidth,
+                height: (9.67/812)*screenHeight,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(8),
+                  color: const Color(0xffe8f3ff),
                 ),
+              ),
             ),
-            Positioned.fill(
-                child: Align(
-                    alignment: Alignment.topLeft,
-                    child: Container(
-                        width: 129.43,
-                        height: 9.67,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(8),
-                            color: const Color(0xffe8f3ff),
-                        ),
-                    ),
-                ),
-            ),
-        ],
-    ),
-);
+          ),
+        ], 
+      ),
+    );
   }
 }
 

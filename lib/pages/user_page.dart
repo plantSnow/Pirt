@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../widgets/UserPage/setting_button.dart';
 
 class User extends StatelessWidget {
   const User({super.key});
@@ -12,7 +13,9 @@ class User extends StatelessWidget {
                 'assets/images/pirt_logo.png', 
                 fit: BoxFit.cover,
               ),
-            )
+            ), 
+            const SizedBox(height: 30,), 
+            const SettingBtn(), 
         //   GridView(
         //     gridDelegate: 
         //   ), 
