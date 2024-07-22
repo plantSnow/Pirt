@@ -1,0 +1,16 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "41099944",
+      "name": "燃气巡检看板",
+      "font_class": "ranqixunjiankanban",
+      "unicode": "e60d",
+      "unicode_decimal": 58893
+    }
+  ]
+}

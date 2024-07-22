@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:pirt/widgets/HomePage/top_bar.dart';
-
+import '../widgets/HomePage/top_bar.dart';
+import '../widgets/HomePage/text_show.dart';
+import '../widgets/HomePage/plan_detail.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -10,21 +11,49 @@ class HomePage extends StatelessWidget {
     double screenHeight = MediaQuery.of(context).size.height;
     double screenWidth = MediaQuery.of(context).size.width;
     
-    return Scaffold(
-      body: Stack(
+    return SizedBox(
+      height: screenHeight,
+      child: ListView(
         children: [
-          Positioned(
-            left: 0.5*(1-360/375)*screenWidth, 
-            top: 0.04*screenHeight,
-            child: const Column(
-              children: [
-                TopBar(), 
-              ]
-            ), 
+          const TopBar(),  
+          SizedBox(
+            height: (50/812)*screenHeight,), 
+          const TextShow(boldText: '下一趟旅途', text: '左滑查看过往留下的痕迹~'), 
+          SizedBox(
+            height: (245/812)*screenHeight,
+            width: (335/375)*screenWidth,
+            child: Container(
+              width: 81.64,
+              height: 93.82,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(8),
+                gradient: const LinearGradient(
+                  begin: Alignment.topCenter, 
+                  end: Alignment.bottomCenter, 
+                  colors: [Color(0xff9ca5f2), Color(0x009ca5f2)], 
+                ),
+              ),
+            ),
+          
           ),
-          
-          
-        ]         
+          const TextShow(boldText: 'DAY1', text: '上拉查看全部行程安排'), 
+          // SizedBox(
+            // width: screenWidth,
+            // height:(250/812)*screenHeight,
+            // child: ListView(
+              // children: const [
+                // ListTile(
+                   const PlanDetails(displayType: 0,),
+                   const PlanDetails(displayType: 1,),
+                   const PlanDetails(displayType: 2,),
+                   const PlanDetails(displayType: 0,),
+                   const PlanDetails(displayType: 2,),
+                  // trailing: Icon(MyIcons.details, color: Colors.black,),
+                // ), 
+              // ],
+            // )
+          // )
+        ]
       )
     );
   }

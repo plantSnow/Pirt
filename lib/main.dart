@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'pages/splash_page.dart';
-// import 'pages/home_page.dart';
+import 'package:pirt/widgets/HomePage/bottom_tab.dart';
+// import 'pages/splash_page.dart';
 // import 'pages/add_plan_page.dart';
 // import 'package:pirt/widgets/HomePage/bottom_tab.dart';
 
@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.white),
         useMaterial3: true,
       ),
-      home: const SplashPage(),
+      home: const BottomTabs(),
     );
   }
 }

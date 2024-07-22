@@ -1,87 +1,121 @@
 import 'package:flutter/material.dart';
-import 'package:pirt/pages/add_plan_page.dart';
-import 'package:pirt/pages/home_page.dart';
-import 'package:pirt/pages/user_page.dart';
+import '/pages/home_page.dart';
+import '/pages/add_plan_page.dart';
+import '/pages/user_page.dart';
+import '/my_icons.dart';
 
-class BottomTab extends StatefulWidget {
-  const BottomTab({super.key});
+class BottomTabs extends StatefulWidget {
+  const BottomTabs({super.key});
 
   @override
-  State<BottomTab> createState() => _BottomTabState();
+  State<BottomTabs> createState() => _BottomTabsState();
 }
 
-class _BottomTabState extends State<BottomTab> {
-  int _currentIndex = 0;
+class _BottomTabsState extends State<BottomTabs> {
+// TODO: 翻页动画不好看(?)
+  int _currentIndex=0;
   final List<Widget> _pages=const [
     HomePage(), 
     AddPlan(), 
-    UserPage(), 
+    User(), 
   ];
-
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        _pages[_currentIndex], 
-        Positioned(
-          child: Container(
-            width: (375),
-            height: 64,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(14),
-                color: Colors.white,
-            ),
-            child: Row(
-              children: [
-                // 主页底部导航
-                IconButton(
-                  onPressed: (){
-                    setState(() {
-                      _currentIndex = 0;
-                    });
-                  }, 
-                  icon: const Icon(Icons.home_outlined), 
-                  color: _currentIndex==0? const Color(0xff5b67ca): const Color(0xffc6cedd),
+    double screenHeight = MediaQuery.of(context).size.height;
+    double screenWidth = MediaQuery.of(context).size.width;
+    return Scaffold(
+      appBar: _currentIndex==1? AppBar(
+        leading: IconButton(
+          onPressed: (){
+            setState(() {
+              _currentIndex == 0;
+            });
+          }, 
+          icon: const Icon(Icons.arrow_back_rounded)
+        ),
+        title: const Text(
+          '新建', 
+          style: TextStyle(
+            fontFamily: 'ShuHei'
+          ),
+        ),
+      ): null,
+      bottomNavigationBar: SizedBox(
+        height: 50,
+        child: BottomNavigationBar(
+          fixedColor: const Color(0xff5b67ca),
+          selectedFontSize: 0,
+          unselectedFontSize: 0,
+          currentIndex: _currentIndex,
+          onTap: (index){
+            setState(() {
+              _currentIndex = index;
+            });
+          },
+          type: BottomNavigationBarType.fixed,
+          elevation: 10,
+          backgroundColor: Colors.white,
+          unselectedItemColor: const Color(0xffc6cedd),
+          enableFeedback: true,
+          iconSize: 30,
+          items: [
+            BottomNavigationBarItem(
+              icon: IconButton(
+                onPressed: (){
+                  setState(() {
+                    _currentIndex = 0;
+                  });
+                }, 
+                icon: const Icon(MyIcons.home, size: 28,), 
                 ), 
-                // 新建页底部导航
-                ElevatedButton(
-                  onPressed: () {
-                    setState(() {
-                      _currentIndex = 1;
-                    });
-                  },
-                  child: Container(
-                    width: 60,
-                    height: 60,
-                    decoration: const BoxDecoration(
-                      shape: BoxShape.circle,
-                      boxShadow: [
-                        BoxShadow(
-                          color: Color(0x40000000),
-                          blurRadius: 4,
-                          offset: Offset(0, 4),
-                        ),
-                      ],
-                      color: Color(0xff5a66c9),
-                    ),
-                    child: const Icon(Icons.add), 
-                  ), 
+              label: '首页', 
+            ), 
+            BottomNavigationBarItem(
+              icon: IconButton(
+                onPressed: (){
+                  setState(() {
+                    // TODO: 这里不对, 应该用路由引入新的页面, 底部导航不再不显示, 但是我不会用路由TAT
+                    _currentIndex = 1;
+                  });
+                },  
+                icon: const Icon(Icons.add_box_outlined), 
                 ), 
-                // 用户设置底部导航
-                IconButton(
-                  onPressed: () {
-                    setState(() {
-                      _currentIndex = 2;
-                    });
-                  },
-                  icon: const Icon(Icons.settings), 
-                  color: _currentIndex==2? const Color(0xff5b67ca): const Color(0xffc6cedd),
+              label: '新建',
+            ),  
+            BottomNavigationBarItem(
+              icon: IconButton(
+                onPressed: (){
+                  setState(() {
+                    _currentIndex = 2;
+                  });
+                }, 
+                icon: const Icon(Icons.account_circle_outlined), 
                 ), 
-              ],
-            )
-          ), 
+              label: '设置',
+            ),  
+          ], 
+        ),
+      ), 
+      floatingActionButton: Container(
+        height: (80/375)*screenWidth,
+        width: (80/812)*screenHeight, 
+        padding: const EdgeInsets.all(10),
+        decoration: BoxDecoration(
+          color: Colors.white, 
+          borderRadius: BorderRadius.circular(100), //TODO: 它弄不圆QAQ
+        ),
+        child: FloatingActionButton(
+          backgroundColor: const Color(0xff5b67ca),
+          onPressed: (){
+            setState(() {
+              _currentIndex = 1;
+            });
+          },
+          child: const Icon(Icons.add_outlined, color: Color(0xffc6cedd),), 
         ), 
-      ]
+      ), 
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      body: _pages[_currentIndex],
     );
   }
 }

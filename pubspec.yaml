@@ -77,7 +77,7 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   # fonts:
-  #   - family: Schyler
+    # - family: Schyler
   #     fonts:
   #       - asset: fonts/Schyler-Regular.ttf
   #       - asset: fonts/Schyler-Italic.ttf
@@ -87,6 +87,20 @@ flutter:
   #       - asset: fonts/TrajanPro.ttf
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
-  #
+  fonts:
+    - family: ShuHei
+      fonts:
+        - asset: assets/fonts/cn/AlimamaShuHeiTi-Bold.ttf
+    - family: YuYang
+      fonts:
+        - asset: assets/fonts/cn/TsangerYuYangT_W03_W03.ttf
+    - family: DingTalk
+      fonts:
+        - asset: assets/fonts/cn/DingTalk-JinBuTi.ttf
+
+    - family: MyIcons
+      fonts:
+        - asset: assets/icons/home/home.ttf
+        - asset: assets/icons/details/details.ttf
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
