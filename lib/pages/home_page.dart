@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pirt/widgets/HomePage/info_display.dart';
 import '../widgets/HomePage/top_bar.dart';
 import '../widgets/HomePage/text_show.dart';
 import '../widgets/HomePage/plan_detail.dart';
@@ -13,29 +14,15 @@ class HomePage extends StatelessWidget {
     
     return SizedBox(
       height: screenHeight,
+      width: screenWidth,
+      // TODO: 这里的页面滑动方式不对
       child: ListView(
         children: [
           const TopBar(),  
           SizedBox(
             height: (50/812)*screenHeight,), 
           const TextShow(boldText: '下一趟旅途', text: '左滑查看过往留下的痕迹~'), 
-          SizedBox(
-            height: (245/812)*screenHeight,
-            width: (335/375)*screenWidth,
-            child: Container(
-              width: 81.64,
-              height: 93.82,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(8),
-                gradient: const LinearGradient(
-                  begin: Alignment.topCenter, 
-                  end: Alignment.bottomCenter, 
-                  colors: [Color(0xff9ca5f2), Color(0x009ca5f2)], 
-                ),
-              ),
-            ),
-          
-          ),
+          const InfoDisplay(info: '出行时间 - 2024/3/2\n距今还有 11 天\n目的地 - 广东/深圳\n天气： 获取中···',), 
           const TextShow(boldText: 'DAY1', text: '上拉查看全部行程安排'), 
           // SizedBox(
             // width: screenWidth,
@@ -43,11 +30,11 @@ class HomePage extends StatelessWidget {
             // child: ListView(
               // children: const [
                 // ListTile(
-                   const PlanDetails(displayType: 0,),
-                   const PlanDetails(displayType: 1,),
-                   const PlanDetails(displayType: 2,),
-                   const PlanDetails(displayType: 0,),
-                   const PlanDetails(displayType: 2,),
+                   const PlanDetails(titleByUser: '长沙南 - 深圳北', timeByUser: '07:25 - 10:40', displayType:  0,),
+                   const PlanDetails(titleByUser: '长沙南 - 深圳北', timeByUser: '07:25 - 10:40', displayType: 1,),
+                   const PlanDetails(titleByUser: '长沙南 - 深圳北', timeByUser: '07:25 - 10:40', displayType: 2,),
+                   const PlanDetails(titleByUser: '长沙南 - 深圳北', timeByUser: '07:25 - 10:40', displayType: 0,),
+                   const PlanDetails(titleByUser: '长沙南 - 深圳北', timeByUser: '07:25 - 10:40', displayType: 2,),
                   // trailing: Icon(MyIcons.details, color: Colors.black,),
                 // ), 
               // ],

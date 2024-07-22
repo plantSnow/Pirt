@@ -3,16 +3,15 @@ import 'package:flutter/material.dart';
 // 文字与图标显示
 class NameAndTimeinPlanDetails extends StatelessWidget {
   final int displayType;
-
-  const NameAndTimeinPlanDetails({super.key, required this.displayType});
+  final String title; 
+  final String time;
+  const NameAndTimeinPlanDetails({super.key, required this.title, required this.time,  required this.displayType});
   
   static const colorList = [Color(0xff8f99eb), Color(0xffe88b8c), Color(0xff1ec1c3)];
   static const iconList = [Icons.train_rounded, Icons.hotel_rounded, Icons.ramen_dining_rounded];
 
   @override
   Widget build(BuildContext context) {
-    String name = '长沙南 - 深圳北';// TODO: 要设计好不同种类的表单
-    String time = '07:25 - 10:40';// TODO: 后台导入
     double screenHeight = MediaQuery.of(context).size.height;
     double screenWidth = MediaQuery.of(context).size.width;
 
@@ -23,7 +22,7 @@ class NameAndTimeinPlanDetails extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            name,
+            title,
             style: const TextStyle(
               color: Color(0xff2c406e),
               fontSize: 16,
@@ -89,8 +88,10 @@ class MyTextButton extends StatelessWidget {
 
 class PlanDetails extends StatelessWidget {
   final int displayType;
+  final String titleByUser; 
+  final String timeByUser;
   
-  const PlanDetails({super.key, required this.displayType});
+  const PlanDetails({super.key, required this.titleByUser, required this.timeByUser, required this.displayType});
   
   static const colorsToBeChosen = [
     [Color(0x338f99eb), Color(0xff8f99eb)], 
@@ -136,7 +137,11 @@ class PlanDetails extends StatelessWidget {
                     ), 
                   ), 
                   // 文字与图标展示, 抽离成 StatelessWidget
-                  NameAndTimeinPlanDetails(displayType: displayType,), 
+                  NameAndTimeinPlanDetails(
+                    title: titleByUser, 
+                    time: timeByUser, 
+                    displayType: displayType,
+                  ), 
                   
                 ]), 
                 Row(children: [

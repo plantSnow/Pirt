@@ -40,12 +40,12 @@ class _TopBarState extends State<TopBar> {
               height: (40/360)*screenWidth,
               child: Stack(
                 children: [
-                  const Positioned.fill(
+                  Positioned.fill(
                     child: Align(
                       alignment: Alignment.bottomRight,
                       child: SizedBox(
-                        width: 36,
-                        height: 36,
+                        width: (40/375)*screenWidth,
+                        height: (40/812)*screenHeight,
                       ),
                     ),
                   ),
@@ -53,9 +53,9 @@ class _TopBarState extends State<TopBar> {
                     child: Align(
                       alignment: Alignment.bottomRight,
                       child: Container(
-                        width: 36,
-                        height: 36,
-                        decoration: BoxDecoration(
+                          width: (40/375)*screenWidth,
+                          height: (40/812)*screenHeight,
+                          decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(14),
                           boxShadow: const [
                             BoxShadow(
@@ -75,10 +75,10 @@ class _TopBarState extends State<TopBar> {
               ),
             ),
           ),
-          const Positioned(
-            left: 15,
-            top: 72,
-            child: Text(
+          Positioned(
+            left: (30/375)*screenWidth,
+            top: (80/812)*screenHeight,
+            child: const Text(
               UserChangableText,
               style: TextStyle(
                 color: Color(0xff575757),
@@ -86,10 +86,10 @@ class _TopBarState extends State<TopBar> {
               ),
             ),
           ),
-          const Positioned(
-            left: 15,
-            top: 20,
-            child: Text(
+          Positioned(
+            left: (15/375)*screenWidth,
+            top: (20/812)*screenHeight,
+            child: const Text(
               GreetingText,
               style: TextStyle(
                 color: Color(0xff12175e),
