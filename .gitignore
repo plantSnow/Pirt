@@ -1,4 +1,6 @@
 # Miscellaneous
+.vscode/
+android/
 *.class
 *.log
 *.pyc
