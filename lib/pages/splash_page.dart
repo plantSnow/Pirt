@@ -48,11 +48,11 @@ class SplashPage extends StatelessWidget {
               const Text(
                 "去我爱的地方，与我爱的人",
                 style: TextStyle(
-                    color: Color.fromARGB(255, 6, 59, 103),
-                    fontSize: 18,
-                    fontStyle: FontStyle.italic,
-                    fontWeight: FontWeight.w300,
-                    decoration: TextDecoration.none),
+                  color: Color.fromARGB(255, 6, 59, 103),
+                  fontSize: 18,
+                  fontStyle: FontStyle.italic,
+                  fontWeight: FontWeight.w300,
+                  decoration: TextDecoration.none),
               )
             ])
           ],
