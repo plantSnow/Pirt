@@ -25,14 +25,7 @@ class _BottomTabsState extends State<BottomTabs> {
     double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: _currentIndex==1? AppBar(
-        leading: IconButton(
-          onPressed: (){
-            setState(() {
-              _currentIndex == 0;
-            });
-          }, 
-          icon: const Icon(Icons.arrow_back_rounded)
-        ),
+        leading: const BackButton(), 
         title: const Text(
           '新建', 
           style: TextStyle(

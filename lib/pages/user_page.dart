@@ -15,7 +15,12 @@ class User extends StatelessWidget {
               ),
             ), 
             const SizedBox(height: 30,), 
-            const SettingBtn(), 
+            const SettingBtn(btnChoose: 0,), 
+            // const SettingBtn(btnColorChoose: 1,), 
+            // const SettingBtn(btnColorChoose: 2,), 
+            // const SettingBtn(btnColorChoose: 3,), 
+            // const SettingBtn(btnColorChoose: 4,), 
+            // GridView(gridDelegate: )
         //   GridView(
         //     gridDelegate: 
         //   ), 
