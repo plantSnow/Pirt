@@ -6,25 +6,38 @@ class User extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    double screenHeight = MediaQuery.of(context).size.height;
+    double screenWidth = MediaQuery.of(context).size.width;
+    return SizedBox(
+      width: screenWidth,
+      height: screenHeight,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-            SizedBox(
-              child: Image.asset(
-                'assets/images/pirt_logo.png', 
-                fit: BoxFit.cover,
-              ),
-            ), 
-            const SizedBox(height: 30,), 
-            const SettingBtn(btnChoose: 0,), 
-            // const SettingBtn(btnColorChoose: 1,), 
-            // const SettingBtn(btnColorChoose: 2,), 
-            // const SettingBtn(btnColorChoose: 3,), 
-            // const SettingBtn(btnColorChoose: 4,), 
-            // GridView(gridDelegate: )
-        //   GridView(
-        //     gridDelegate: 
-        //   ), 
+          SizedBox(
+            height: (250/812)*screenHeight,
+          ), 
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Column(children: [
+                const SettingBtn(btnChoose: 0), 
+                SizedBox(height: (20/812)*screenHeight,), 
+                const SettingBtn(btnChoose: 2), 
+                SizedBox(height: (20/812)*screenHeight,), 
+                const SettingBtn(btnChoose: 4), 
+              ],), 
+              SizedBox(width: (20/375)*screenWidth,), 
+              Column(children: [
+                const SettingBtn(btnChoose: 1), 
+                SizedBox(height: (20/812)*screenHeight,), 
+                const SettingBtn(btnChoose: 3), 
+                SizedBox(height: (158/812)*screenHeight,), 
+              ],), 
+            ]
+          )
         ],
-      );
+      ),
+    );
   }
 }

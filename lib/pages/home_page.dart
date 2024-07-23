@@ -5,8 +5,7 @@ import '../widgets/HomePage/text_show.dart';
 import '../widgets/HomePage/plan_detail.dart';
 
 class HomePage extends StatelessWidget {
-  // TODO: 不一定会是 String 类型, 日后再改
-  final String info; //TODO: 后端传入参数, 接入数据库调取信息(？)
+  final String info; //TODO: 后端传入参数, 接入数据库调取信息(？), 也不一定会是 String 类型
   const HomePage({super.key, required this.info});
 
   @override

@@ -44,8 +44,6 @@ class AddPlan extends StatelessWidget {
     return const Column(
       crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // TODO: 这里迟早给它拆成小组件哼哼:)
-          
           MyTextField(question: "计划名称",),
           MyTextField(question: "出行日期"), 
           MyTextField(question: "出行日期"), 
