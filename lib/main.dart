@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pirt/widgets/HomePage/bottom_tab.dart';
+import 'package:pirt/widgets/UserPage/setting_button.dart';
 // import 'pages/splash_page.dart';
 // import 'pages/add_plan_page.dart';
 // import 'package:pirt/widgets/HomePage/bottom_tab.dart';
@@ -20,7 +21,11 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.white), // 主题颜色白色
         useMaterial3: true,
       ),
-      home: const BottomTabs(), // 首先直接进入底部导航默认的首页 HomePage
+      // 导航路径注册
+      routes: {
+        "/":(context) => const BottomTabs(),//默认主界面
+        // "userpage":(context) => SettingBtn(btnChoose: btnChoose)
+      },
     );
   }
 }
