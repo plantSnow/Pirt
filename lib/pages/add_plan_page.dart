@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// 这个是一个输入栏, 还没做的很完善, (没有传参)
 class MyTextField extends StatelessWidget {
   final String question;
 
@@ -44,8 +45,6 @@ class AddPlan extends StatelessWidget {
     return const Column(
       crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // TODO: 这里迟早给它拆成小组件哼哼:)
-          
           MyTextField(question: "计划名称",),
           MyTextField(question: "出行日期"), 
           MyTextField(question: "出行日期"), 

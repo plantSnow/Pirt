@@ -4,6 +4,7 @@ import '/pages/add_plan_page.dart';
 import '/pages/user_page.dart';
 import '/my_icons.dart';
 
+// 底部导航栏, 也就是三个图标点击即可切换页面的那个, 是 Scaffold 组件
 class BottomTabs extends StatefulWidget {
   const BottomTabs({super.key});
 
@@ -21,8 +22,8 @@ class _BottomTabsState extends State<BottomTabs> {
   ];
   @override
   Widget build(BuildContext context) {
-    double screenHeight = MediaQuery.of(context).size.height;
-    double screenWidth = MediaQuery.of(context).size.width;
+    // double screenHeight = MediaQuery.of(context).size.height;
+    // double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: _currentIndex==1? AppBar(
         // TODO:这回退按钮用不了啊
@@ -90,25 +91,26 @@ class _BottomTabsState extends State<BottomTabs> {
           ], 
         ),
       ), 
-      floatingActionButton: Container(
-        height: (80/375)*screenWidth,
-        width: (80/812)*screenHeight, 
-        padding: const EdgeInsets.all(10),
-        decoration: BoxDecoration(
-          color: Colors.white, 
-          borderRadius: BorderRadius.circular(100), //TODO: 它弄不圆QAQ
-        ),
-        child: FloatingActionButton(
-          backgroundColor: const Color(0xff5b67ca),
-          onPressed: (){
-            setState(() {
-              _currentIndex = 1;
-            });
-          },
-          child: const Icon(Icons.add_outlined, color: Color(0xffc6cedd),), 
-        ), 
-      ), 
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      // TODO: 浮动按钮, 丑
+      // floatingActionButton: Container(
+      //   height: (80/375)*screenWidth,
+      //   width: (80/812)*screenHeight, 
+      //   padding: const EdgeInsets.all(10),
+      //   decoration: BoxDecoration(
+      //     color: Colors.white, 
+      //     borderRadius: BorderRadius.circular(100), //TODO: 它弄不圆QAQ
+      //   ),
+      //   child: FloatingActionButton(
+      //     backgroundColor: const Color(0xff5b67ca),
+      //     onPressed: (){
+      //       setState(() {
+      //         _currentIndex = 1;
+      //       });
+      //     },
+      //     child: const Icon(Icons.add_outlined, color: Color(0xffc6cedd),), 
+      //   ), 
+      // ), 
+      // floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       body: _pages[_currentIndex],
     );
   }

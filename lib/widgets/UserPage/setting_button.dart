@@ -1,7 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
+// 用户页面的五个按钮, 参数 btnChoose 的值取0~4对应了5个不同按钮
 class SettingBtn extends StatelessWidget {
   final int btnChoose;
   const SettingBtn({super.key, required this.btnChoose});
@@ -18,7 +17,8 @@ class SettingBtn extends StatelessWidget {
     Icons.calendar_month_outlined, 
     Icons.work_outline_rounded, 
     Icons.person_outline_rounded, 
-    Icons.location_on_outlined
+    Icons.location_on_outlined, 
+    Icons.settings, 
   ];
 
   static const btnText = [
@@ -29,7 +29,7 @@ class SettingBtn extends StatelessWidget {
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.of(context).size.height;
     double screenWidth = MediaQuery.of(context).size.width;
-    // TODO: 按钮形状颜色仍未调整好
+    // TODO: 按钮按下触发路由
     return RawMaterialButton(
       onPressed: (){}, 
       child: Container(
@@ -57,28 +57,33 @@ class SettingBtn extends StatelessWidget {
               )
             ), 
             Align(
-              alignment: Alignment(0, (btnChoose == 0 || btnChoose == 3)? 0.4 : 0.5),
-              child: (btnChoose == 0 || btnChoose == 3)? Text(
+              alignment: Alignment(0, (btnChoose == 0 || btnChoose == 3)? 0.6 : 0.5),
+              child: ((btnChoose == 0) || (btnChoose == 3))? SizedBox(
+                height: (48/812)*screenHeight,
+                child: Column( 
+                  children: [
+                    Text(
+                      btnText[btnChoose], 
+                      style: const TextStyle(
+                        color: Color(0xff10275a), 
+                        fontWeight: FontWeight.w800
+                      ),
+                    ), 
+                    Text(
+                      btnChoose == 0? '总数： ${4}': '点亮：${4}', //TODO: 这里的数据来自后端传参
+                      style: const TextStyle(
+                        color: Color(0xff393939)
+                      ),
+                    ), 
+                  ]
+                )
+              ): Text(
                 btnText[btnChoose], 
                 style: const TextStyle(
                   color: Color(0xff10275a), 
                   fontWeight: FontWeight.w800
                 ),
-              ): Column( children: [
-                Text(
-                  btnText[btnChoose], 
-                  style: const TextStyle(
-                    color: Color(0xff10275a), 
-                    fontWeight: FontWeight.w800
-                  ),
-                ), 
-                Text(
-                  btnChoose == 0? '总数： ${4}': '点量：${4}', //TODO: 这里的数据来自后端传参
-                  style: const TextStyle(
-                    color: Color(0xff393939)
-                  ),
-                )
-              ])
+              )
             )
           ],
         ),

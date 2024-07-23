@@ -5,7 +5,7 @@ import '../widgets/HomePage/text_show.dart';
 import '../widgets/HomePage/plan_detail.dart';
 
 class HomePage extends StatelessWidget {
-  // TODO: 不一定会是 String 类型, 日后再改
+  // 这是传向紫色框框的参数信息 info , 暂定假设为字符串类型
   final String info; //TODO: 后端传入参数, 接入数据库调取信息(？)
   const HomePage({super.key, required this.info});
 
@@ -21,6 +21,7 @@ class HomePage extends StatelessWidget {
       child: ListView(
         children: [
           const TopBar(
+            // 这是传向蓝色框框的文案
             // TODO: 后端传入数据, 与时间有关
             greetingText: "早上好，种下大雪",
             userChangableText: "可自定义文案",

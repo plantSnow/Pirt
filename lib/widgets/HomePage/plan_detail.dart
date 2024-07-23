@@ -26,7 +26,6 @@ class NameAndTimeinPlanDetails extends StatelessWidget {
             style: const TextStyle(
               color: Color(0xff2c406e),
               fontSize: 16,
-              fontFamily: "Roboto",// TODO: 字体待更改
               fontWeight: FontWeight.w500,
             ),
           ),
@@ -51,6 +50,7 @@ class NameAndTimeinPlanDetails extends StatelessWidget {
   }
 }
 // 文本按钮
+// 每个展示框下方对应颜色的按钮
 class MyTextButton extends StatelessWidget {
   final String textForButton;
   final List colorsForButton;
@@ -86,6 +86,7 @@ class MyTextButton extends StatelessWidget {
   }
 }
 
+// 首页展示框, 最下方的列表, 与 ListTile 不太兼容, 在 ListTile 中按钮会消失
 class PlanDetails extends StatelessWidget {
   final int displayType;
   final String titleByUser; 
@@ -153,6 +154,7 @@ class PlanDetails extends StatelessWidget {
               ]
             ),
           ), 
+          // 右上角图标按钮, 详细信息
           Positioned(
             right: (5/375)*screenWidth,
             top: (5/812)*screenHeight,
@@ -166,6 +168,7 @@ class PlanDetails extends StatelessWidget {
               )
             ), 
           ), 
+          // 右下角图标按钮, 新增活动
           Positioned(
             right: (5/375)*screenWidth,
             bottom: (5/812)*screenHeight,
