@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// 用户页面的五个按钮, 参数 btnChoose 的值取0~4对应了5个不同按钮
 class SettingBtn extends StatelessWidget {
   final int btnChoose;
   const SettingBtn({super.key, required this.btnChoose});
@@ -28,7 +29,7 @@ class SettingBtn extends StatelessWidget {
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.of(context).size.height;
     double screenWidth = MediaQuery.of(context).size.width;
-    // TODO: 按钮形状颜色仍未调整好
+    // TODO: 按钮按下触发路由
     return RawMaterialButton(
       onPressed: (){}, 
       child: Container(

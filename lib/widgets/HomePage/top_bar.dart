@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// 首页顶部蓝色的框框
 class TopBar extends StatefulWidget { 
   final String greetingText;
   final String userChangableText;
@@ -19,14 +20,13 @@ class _TopBarState extends State<TopBar> {
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.of(context).size.height;
     double screenWidth = MediaQuery.of(context).size.width;
-    // TODO: 文案待更改
     return Container(
       //顶部显示栏的背景颜色
       width: (360/375)*screenWidth,
       height: (114/812)*screenHeight,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(8),
-        border: Border.all(color: const Color(0xff0095ff), width: 1, ),//TODO: 颜色好丑
+        border: Border.all(color: const Color(0xff0095ff), width: 1, ),//TODO: 颜色好丑, 谁能救救它Q_Q
         gradient: const LinearGradient(
           begin: Alignment.topCenter, 
           end: Alignment.bottomCenter, 
@@ -96,7 +96,6 @@ class _TopBarState extends State<TopBar> {
               style: const TextStyle(
                 color: Color(0xff12175e),
                 fontSize: 28,
-                fontFamily: "Roboto",//TODO: 字体待更改
               ),
             ),
           ),

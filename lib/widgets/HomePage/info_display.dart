@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 // TODO: 稀烂的, 功能完全没做出来, 这只是个图形, 这根条不太能做啊
+// 紫色框框下面那根进度条
 class InfoArrow extends StatefulWidget {
   const InfoArrow({super.key});
 
@@ -62,6 +63,7 @@ class _InfoArrowState extends State<InfoArrow> {
   }
 }
 
+// 紫色框框+进度条, 功能实现得不太理想
 class InfoDisplay extends StatelessWidget {
   final String info;
   const InfoDisplay({super.key, required this.info});

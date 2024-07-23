@@ -4,6 +4,7 @@ import '/pages/add_plan_page.dart';
 import '/pages/user_page.dart';
 import '/my_icons.dart';
 
+// 底部导航栏, 也就是三个图标点击即可切换页面的那个, 是 Scaffold 组件
 class BottomTabs extends StatefulWidget {
   const BottomTabs({super.key});
 

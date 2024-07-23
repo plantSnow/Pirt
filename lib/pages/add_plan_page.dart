@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// 这个是一个输入栏, 还没做的很完善, (没有传参)
 class MyTextField extends StatelessWidget {
   final String question;
 

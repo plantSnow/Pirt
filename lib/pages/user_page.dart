@@ -14,9 +14,11 @@ class User extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          // TODO: 留给头像框和个性签名的 SizedBox, 排版基本已经完成
           SizedBox(
             height: (250/812)*screenHeight,
           ), 
+          // 按钮排列, 没有使用 GridView, 没必要
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [

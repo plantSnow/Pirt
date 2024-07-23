@@ -15,12 +15,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Pirt Trip',
-      debugShowCheckedModeBanner: false,
+      debugShowCheckedModeBanner: false, // 删去右上角的 Debug
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.white),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.white), // 主题颜色白色
         useMaterial3: true,
       ),
-      home: const BottomTabs(),
+      home: const BottomTabs(), // 首先直接进入底部导航默认的首页 HomePage
     );
   }
 }
