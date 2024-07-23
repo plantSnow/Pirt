@@ -1,3 +1,4 @@
+// 暂时弃用 启动页用图片实现 这个界面不知道什么时候用得到 maybe新建的打开页？
 import 'package:flutter/material.dart';
 
 class SplashPage extends StatelessWidget {
