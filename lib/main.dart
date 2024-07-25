@@ -7,7 +7,7 @@ import 'package:pirt/widgets/HomePage/navigation_bar.dart';
 // import 'pages/splash_page.dart';
 // import 'pages/add_plan_page.dart';
 // import 'package:pirt/widgets/HomePage/bottom_tab.dart';
-
+                                    
 void main() {
   runApp(const MyApp());
 }
