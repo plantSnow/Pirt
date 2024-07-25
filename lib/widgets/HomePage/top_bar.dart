@@ -26,7 +26,7 @@ class _TopBarState extends State<TopBar> {
       height: (114/812)*screenHeight,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(8),
-        border: Border.all(color: const Color(0xff0095ff), width: 1, ),//TODO: 颜色好丑, 谁能救救它Q_Q
+        border: Border.all(color: const Color(0xff0095ff), width: 1, ), // TODO: 颜色好丑, 谁能救救它Q_Q
         gradient: const LinearGradient(
           begin: Alignment.topCenter, 
           end: Alignment.bottomCenter, 
@@ -69,7 +69,7 @@ class _TopBarState extends State<TopBar> {
                           color: Colors.white,
                         ),
                         padding: const EdgeInsets.only(top: 1, bottom: 2, ),
-                        child: const Icon(Icons.person)
+                        child: const Icon(Icons.person)//Image.asset('assets\\images\\pirt_logo.png'), 
                       ),
                     ),
                   ),
