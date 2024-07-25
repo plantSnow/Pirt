@@ -27,7 +27,6 @@ class _MyNavigationState extends State<MyNavigation> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body:PageTransitionSwitcher(transitionBuilder: ((child, primaryAnimation, secondaryAnimation) => FadeThroughTransition(animation: primaryAnimation, secondaryAnimation: secondaryAnimation,child: child,),child:pages[currentPageIndex],)),
       bottomNavigationBar: NavigationBar(
         height: 50, //按钮高度
         elevation: 0, //按钮背景色高度
