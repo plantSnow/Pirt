@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
+import 'pages/add_plan_page.dart';
+import 'widgets/HomePage/navigation_bar.dart';
+
+=======
 import 'package:pirt/pages/add_plan_page.dart';
 // import 'package:pirt/pages/new_plan_page.dart';
 // import 'package:pirt/widgets/HomePage/bottom_tab.dart';
@@ -8,6 +13,8 @@ import 'package:pirt/widgets/HomePage/navigation_bar.dart';
 // import 'pages/add_plan_page.dart';
 // import 'package:pirt/widgets/HomePage/bottom_tab.dart';
 
+                                    
+>>>>>>> a15d19f6c06c7d218c4546e13eeb7979ecb5bd9c
 void main() {
   runApp(const MyApp());
 }
@@ -26,7 +33,7 @@ class MyApp extends StatelessWidget {
       ),
       // 导航路径注册
       routes: {
-        "/": (context) => const NavigationExample(), //默认主界面
+        "/": (context) => const MyNavigation(), //默认主界面
         "add_plan_page": (context) => const AddPlan(),
       },
       // 当没找到路由名称时使用onGenerate的方法

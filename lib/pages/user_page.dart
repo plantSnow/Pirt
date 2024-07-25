@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../widgets/UserPage/setting_button.dart';
+import '../widgets/UserPage/user_photo.dart';
 
 class User extends StatelessWidget {
   const User({super.key});
@@ -17,6 +18,7 @@ class User extends StatelessWidget {
           // TODO: 留给头像框和个性签名的 SizedBox, 排版基本已经完成
           SizedBox(
             height: (250/812)*screenHeight,
+            child: const UserPhoto(),
           ), 
           // 按钮排列, 没有使用 GridView, 没必要
           Row(
