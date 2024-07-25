@@ -1,7 +1,19 @@
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
 import 'pages/add_plan_page.dart';
 import 'widgets/HomePage/navigation_bar.dart';
 
+=======
+import 'package:pirt/pages/add_plan_page.dart';
+import 'package:pirt/pages/new_plan_page.dart';
+import 'package:pirt/widgets/HomePage/bottom_tab.dart';
+import 'package:pirt/widgets/UserPage/setting_button.dart';
+import 'package:pirt/widgets/HomePage/navigation_bar.dart';
+// import 'pages/splash_page.dart';
+// import 'pages/add_plan_page.dart';
+// import 'package:pirt/widgets/HomePage/bottom_tab.dart';
+                                    
+>>>>>>> a15d19f6c06c7d218c4546e13eeb7979ecb5bd9c
 void main() {
   runApp(const MyApp());
 }
