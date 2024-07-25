@@ -1,4 +1,4 @@
-//弃用这个底部按钮了 新做了一个
+// 弃用这个底部按钮了 新做了一个
 
 
 
@@ -28,13 +28,13 @@
 
 // class _BottomTabsState extends State<BottomTabs> {
 // // TODO: 翻页动画不好看(?)
-//   int _currentIndex=0;
-//   final List<Widget> _pages=const [
-//     HomePage(info: '出行时间 - 2024/3/2\n距今还有 11 天\n目的地 - 广东/深圳\n天气： 获取中···',), 
-//     AddPlan(), 
-//     User(), 
-//   ];
-//   @override
+// //   int _currentIndex=0;
+  // final List<Widget> _pages=const [
+  //   HomePage(info: '出行时间 - 2024/3/2\n距今还有 11 天\n目的地 - 广东/深圳\n天气： 获取中···',), 
+  //   AddPlan(), 
+  //   User(), 
+  // ];
+// //   @override
 //   Widget build(BuildContext context) {
 //     // double screenHeight = MediaQuery.of(context).size.height;
 //     // double screenWidth = MediaQuery.of(context).size.width;
