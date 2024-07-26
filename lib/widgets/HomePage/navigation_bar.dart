@@ -55,39 +55,41 @@ class _MyNavigationState extends State<MyNavigation> {
             // }
           });
         },
-        indicatorColor: Colors.white, 
+        indicatorColor: const Color(0xff5b67ca),
         indicatorShape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(40)),
         ),
         selectedIndex: currentPageIndex,
-        destinations: const <Widget> [
+        destinations: const <Widget>[
           NavigationDestination(
             selectedIcon: Icon(
-              Icons.home, 
-              color: Color(0xff5b67ca),
+              Icons.home,
+              color: Colors.white,
             ),
             icon: Icon(
-              Icons.home_outlined, 
+              Icons.home_outlined,
               color: Color(0xffc6cedd),
             ),
             label: '首页',
           ),
           NavigationDestination(
             selectedIcon: Icon(
-              Icons.add_box, 
-              color: Color(0xff5b67ca),
+              Icons.add_box,
+              color: Colors.white,
             ),
             icon: Icon(
-              Icons.add_box_outlined, 
+              Icons.add_box_outlined,
               color: Color(0xffc6cedd),
             ),
             label: '新建',
           ),
           NavigationDestination(
-            selectedIcon: Icon(Icons.account_circle, 
-              color: Color(0xff5b67ca),),
+            selectedIcon: Icon(
+              Icons.account_circle,
+              color: Colors.white,
+            ),
             icon: Icon(
-              Icons.account_circle_outlined, 
+              Icons.account_circle_outlined,
               color: Color(0xffc6cedd),
             ),
             label: '设置',
