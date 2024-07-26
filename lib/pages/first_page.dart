@@ -1,5 +1,7 @@
 // 暂时弃用 启动页用图片实现 这个界面不知道什么时候用得到 maybe新建的打开页？
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:pirt/pages/add_plan_page.dart';
 
 class FistEnterPage extends StatelessWidget {
   const FistEnterPage({super.key});
@@ -34,7 +36,10 @@ class FistEnterPage extends StatelessWidget {
                 height: 60,
                 child: ElevatedButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, "/");
+                      Navigator.push(
+                          context,
+                          CupertinoPageRoute(
+                              builder: (context) => const AddPlan()));
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: const Color.fromARGB(255, 41, 60, 153),
