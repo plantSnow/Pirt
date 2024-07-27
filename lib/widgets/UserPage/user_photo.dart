@@ -1,73 +1,69 @@
 import 'package:flutter/material.dart';
 
 class UserPhoto extends StatelessWidget {
-  const UserPhoto({super.key});
+  final String userName;
+  final String personalQuote;
+
+  const UserPhoto({super.key, required this.userName, required this.personalQuote});
 
   @override
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.of(context).size.height;
     double screenWidth = MediaQuery.of(context).size.width;
     return SizedBox(
-      width: (100/375)*screenWidth,
-      height: (157/812)*screenHeight,
-      child: Stack(
+      width: screenWidth,
+      height: (160/812)*screenHeight,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children:[
-          Positioned.fill(
-            child: Align(
-              alignment: Alignment.topLeft,
-              child: Container(
-                width: (86/375)*screenWidth,
-                height: (86/812)*screenHeight,
-                decoration: const BoxDecoration(
-                  shape: BoxShape.circle,
-                  boxShadow: [
-                    BoxShadow(
-                      color: Color(0xfff1f6ff),
-                      blurRadius: 13,
-                      offset: Offset(-3, 7),
-                    ),
-                  ],
-                  color: Colors.white,
-                ),
-              ),
-            ),
-          ),
-          Positioned.fill(
-            child: Align(
-              alignment: Alignment.topLeft,
-              child: SizedBox(
-                width: (78/375)*screenWidth,
-                height: (78/812)*screenHeight,
-                child: const FlutterLogo(size: 78),
-              ),
-            ),
-          ),
-          Positioned(
-              left: (2/375)*screenWidth,
-              top: (104/812)*screenHeight,
-              child: const Text(
-                  "种下大雪",
-                  style: TextStyle(
-                      color: Color(0xff10275a),
-                      fontSize: 20,
-                      fontFamily: "Roboto",
-                      fontWeight: FontWeight.w700,
+          Align(
+            alignment: Alignment.topLeft,
+            child: Container(
+              width: screenWidth,
+              height: (86/812)*screenHeight,
+              decoration: const BoxDecoration(
+                shape: BoxShape.circle,
+                boxShadow: [
+                  BoxShadow(
+                    color: Color(0xfff1f6ff),
+                    blurRadius: 13,
+                    offset: Offset(-3, 7),
                   ),
+                ],
+                color: Colors.white,
               ),
-          ),
-          const Positioned.fill(
-            child: Align(
-              alignment: Alignment(0, 0.4),
-              child: Text(
-                "诗酒趁年华...",
-                style: TextStyle(
-                  color: Color(0xff8586a9),
-                  fontSize: 14,
+              child: ClipOval(
+                child: Image.asset(
+                  'assets/images/pirt_logo.png', 
+                  fit: BoxFit.contain,
                 ),
+              )
+            ),
+          ),
+          SizedBox(height: (20/812)*screenHeight,), 
+          Text(
+            userName,
+            style: const TextStyle(
+              color: Color(0xff10275a),
+              fontSize: 20,
+              fontFamily: 'YuYang',
+              fontWeight: FontWeight.w700,
+            ),
+          ),
+          SizedBox(height: (30/812)*screenHeight,),
+          Align(
+            alignment: const Alignment(0, 0.4),
+            child: Text(
+              personalQuote,
+              style: const TextStyle(
+                color: Color(0xff8586a9),
+                fontFamily: 'DingTalk',
+                fontSize: 14,
               ),
             ),
           ),
-        ],
+        ], 
       ),
     );
   }

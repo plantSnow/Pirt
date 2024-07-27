@@ -26,7 +26,7 @@ class SettingLanguage extends StatelessWidget {
                 thickness: 1,
                 height: 20,
               ),
-              //TODO：做右侧的展开切换语言？真的能有别的语言吗） Hero动画应该是
+              //TODO：做右侧的展开切换语言？真的能有别的语言吗） Hero动画应该是 //语言不切换了, 这个做成死的, 看到了把这条删掉
               Text(
                 "   简体中文",
                 style: TextStyle(

@@ -1,12 +1,8 @@
-// import 'dart:html';
-
 import 'package:flutter/material.dart';
+import 'package:animations/animations.dart';
 import '../../pages/first_page.dart';
 import '../../pages/home_page.dart';
 import '../../pages/user_page.dart';
-import 'package:animations/animations.dart';
-
-// import '/my_icons.dart';
 
 class MyNavigation extends StatefulWidget {
   const MyNavigation({super.key});
@@ -31,11 +27,11 @@ class _MyNavigationState extends State<MyNavigation> {
       body: PageTransitionSwitcher(
         duration: const Duration(milliseconds: 400),
         transitionBuilder: (child, primaryAnimation, secondaryAnimation) =>
-            FadeThroughTransition(
-          animation: primaryAnimation,
-          secondaryAnimation: secondaryAnimation,
-          child: child,
-        ),
+          FadeThroughTransition(
+            animation: primaryAnimation,
+            secondaryAnimation: secondaryAnimation,
+            child: child,
+          ),
         child: pages[currentPageIndex],
       ),
       bottomNavigationBar: NavigationBar(
@@ -59,7 +55,7 @@ class _MyNavigationState extends State<MyNavigation> {
           borderRadius: BorderRadius.all(Radius.circular(40)),
         ),
         selectedIndex: currentPageIndex,
-        destinations: const <Widget>[
+        destinations: const <Widget> [
           NavigationDestination(
             selectedIcon: Icon(
               Icons.home,

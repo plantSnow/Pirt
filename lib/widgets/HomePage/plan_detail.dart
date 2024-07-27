@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../widgets/HomePage/calendar.dart';
 
 // 文字与图标显示
 class NameAndTimeinPlanDetails extends StatelessWidget {
@@ -105,6 +106,16 @@ class PlanDetails extends StatelessWidget {
     ['地点查询', '闹钟设置'], 
   ];
 
+  void _gotoCalendar(BuildContext context) {
+    Navigator.of(context).push(MaterialPageRoute<void>(
+      builder: (BuildContext context) => const Scaffold(
+        body: Center(
+          child: Calendar(calendarType: 0)
+        ),
+      ),
+    ));
+  }
+
   @override
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.of(context).size.height;
@@ -161,7 +172,7 @@ class PlanDetails extends StatelessWidget {
             // 右上角按钮, 弹出详细介绍窗口  
             child: IconButton(
               iconSize: 20,
-              onPressed: (){}, //TODO: 弹出窗口
+              onPressed: () => _gotoCalendar(context), //TODO: 日历大小未能调整, 弹出的是一个页面, 加上了脚手架 Scaffold
               icon: const Icon(
                 Icons.book, 
                 color: Color(0xff9aa8c7),

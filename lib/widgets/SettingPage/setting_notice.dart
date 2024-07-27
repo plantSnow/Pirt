@@ -27,7 +27,11 @@ class SettingNotice extends StatelessWidget {
                 thickness: 1,
                 height: 20,
               ),
-              //TODO:做右侧的按钮 KeyEvent
+              //TODO:做右侧的按钮 KeyEvent 
+              /** 1. ListTile, 用 leading 和 tailing 属性, 可以试试, 
+                  2. 外面套一层 Row 调距离
+                  嘻嘻 :)
+              **/
               Text(
                 "   允许提示通知",
                 style: TextStyle(

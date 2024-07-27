@@ -16,6 +16,7 @@ class _TopBarState extends State<TopBar> {
   String userChangableText;
 
   _TopBarState({required this.greetingText, required this.userChangableText});
+  
   @override
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.of(context).size.height;

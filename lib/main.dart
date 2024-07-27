@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './widgets/HomePage/calendar.dart';
 import './pages/add_plan_page.dart';
 import './widgets/HomePage/navigation_bar.dart';
 
@@ -6,6 +7,7 @@ void main() {
   runApp(const MyApp());
 }
 
+// TODO: 用 Local, 自动兼容中文语言包, 否则日历的月份表示是英语的改不了
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -20,8 +22,10 @@ class MyApp extends StatelessWidget {
       ),
       // 导航路径注册
       routes: {
+        // "/": (context) => const Scaffold(body: Calendar(calendarType: 0,)), //默认主界面
         "/": (context) => const MyNavigation(), //默认主界面
         "add_plan_page": (context) => const AddPlan(),
+        "calendar":(context) => const Scaffold(body: Calendar(calendarType: 0,)), 
       },
       // 当没找到路由名称时使用onGenerate的方法
       // onGenerateRoute: (settings) {
