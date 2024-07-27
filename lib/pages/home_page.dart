@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pirt/widgets/HomePage/info_display.dart';
+import '../widgets/HomePage/info_display.dart';
 import '../widgets/HomePage/top_bar.dart';
 import '../widgets/HomePage/text_show.dart';
 import '../widgets/HomePage/plan_detail.dart';

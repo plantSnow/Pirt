@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 // 文本展示, 类似标题, 就是蓝色框和紫色框中间的那段文字标题, 因为出现了两次所以我抽离成单独的组件
 class TextShow extends StatelessWidget {
   final String boldText, text;
