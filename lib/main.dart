@@ -23,6 +23,45 @@ class MyApp extends StatelessWidget {
         "/": (context) => const MyNavigation(), //默认主界面
         "add_plan_page": (context) => const AddPlan(),
       },
+      // 当没找到路由名称时使用onGenerate的方法
+      // onGenerateRoute: (settings) {
+      //   if (settings.name == "add_plan_page") {
+      //     return ScaleRoute(page: const AddPlan());
+      //   }
+      //   return null;
+      // },
     );
   }
 }
+// 使用命名路由器无法做动画
+// 放缩动画
+// class ScaleRoute extends PageRouteBuilder {
+//   final Widget page;
+//   ScaleRoute({required this.page})
+//       : super(
+//           pageBuilder: (
+//             BuildContext context,
+//             Animation<double> animation,
+//             Animation<double> secondaryAnimation,
+//           ) =>
+//               page,
+//           transitionsBuilder: (
+//             BuildContext context,
+//             Animation<double> animation,
+//             Animation<double> secondaryAnimation,
+//             Widget child,
+//           ) =>
+//               ScaleTransition(
+//             scale: Tween<double>(
+//               begin: 0.0,
+//               end: 1.0,
+//             ).animate(
+//               CurvedAnimation(
+//                 parent: animation,
+//                 curve: Curves.fastOutSlowIn,
+//               ),
+//             ),
+//             child: child,
+//           ),
+//         );
+// }
