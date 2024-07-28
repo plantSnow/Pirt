@@ -29,78 +29,74 @@ class SettingBtn extends StatelessWidget {
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.of(context).size.height;
     double screenWidth = MediaQuery.of(context).size.width;
-    
+
     return RawMaterialButton(
-      onPressed: () {
-        // 根据按钮传入的btnchoose值转到不同的界面
-        switch (btnChoose) {
-          case 1: 
-          case 2: 
-          case 4:
-            Navigator.push(
-              context,
-              CupertinoPageRoute(
-                builder: (context) => const SettingPage(),
-              ));
-            break;
-        }
-      },
-      child: Container(
-        height: (138 / 812) * screenHeight,
-        width: (138 / 375) * screenWidth,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20),
-          color: colorsToBeUsed[btnChoose][0],
-        ),
-        child: Stack(
-          children: [
-            Align(
-              alignment: const Alignment(0, -0.6),
-              child: Container(
-                width: (48 / 375) * screenWidth,
-                height: (48 / 812) * screenHeight,
-                decoration: BoxDecoration(
-                  color: colorsToBeUsed[btnChoose][1],
-                  borderRadius: BorderRadius.circular(8)),
-                child: Icon(
-                  iconList[btnChoose],
-                  color: Colors.white,
-                ),
-              )
-            ),
-            Align(
-              alignment: Alignment(0, (btnChoose == 0 || btnChoose == 3) ? 0.7 : 0.5),
-              child: ((btnChoose == 0) || (btnChoose == 3)) 
-                ? SizedBox(
-                  height: (48 / 812) * screenHeight,
-                  child: Column(children: [
-                    Text(
-                      btnText[btnChoose],
-                      style: const TextStyle(
-                        color: Color(0xff10275a),
-                        fontFamily: 'Shuhei',
-                        fontWeight: FontWeight.w800
-                      ),
+        onPressed: () {
+          // 根据按钮传入的btnchoose值转到不同的界面
+          switch (btnChoose) {
+            case 1:
+              break;
+            case 2:
+              break;
+            case 4:
+              Navigator.push(
+                  context,
+                  CupertinoPageRoute(
+                    builder: (context) => const SettingPage(),
+                  ));
+              break;
+          }
+        },
+        child: Container(
+          height: (138 / 812) * screenHeight,
+          width: (138 / 375) * screenWidth,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20),
+            color: colorsToBeUsed[btnChoose][0],
+          ),
+          child: Stack(
+            children: [
+              Align(
+                  alignment: const Alignment(0, -0.6),
+                  child: Container(
+                    width: (48 / 375) * screenWidth,
+                    height: (48 / 812) * screenHeight,
+                    decoration: BoxDecoration(
+                        color: colorsToBeUsed[btnChoose][1],
+                        borderRadius: BorderRadius.circular(8)),
+                    child: Icon(
+                      iconList[btnChoose],
+                      color: Colors.white,
                     ),
-                    Text(
-                      btnChoose == 0
-                        ? '总数： ${4}(例)'
-                        : '点亮： ${4}(例)',
-                      style: const TextStyle(color: Color(0xff393939)),
-                    ),
-                  ])
-                )
-                : Text(
-                    btnText[btnChoose],
-                    style: const TextStyle(
-                      color: Color(0xff10275a),
-                      fontFamily: 'Shuhei',
-                      fontWeight: FontWeight.w800),
-                )
-            )
-          ],
-        ),
-      )
-    );
+                  )),
+              Align(
+                  alignment: Alignment(
+                      0, (btnChoose == 0 || btnChoose == 3) ? 0.7 : 0.5),
+                  child: ((btnChoose == 0) || (btnChoose == 3))
+                      ? SizedBox(
+                          height: (48 / 812) * screenHeight,
+                          child: Column(children: [
+                            Text(
+                              btnText[btnChoose],
+                              style: const TextStyle(
+                                  color: Color(0xff10275a),
+                                  fontFamily: 'Shuhei',
+                                  fontWeight: FontWeight.w800),
+                            ),
+                            Text(
+                              btnChoose == 0 ? '总数： ${4}(例)' : '点亮： ${4}(例)',
+                              style: const TextStyle(color: Color(0xff393939)),
+                            ),
+                          ]))
+                      : Text(
+                          btnText[btnChoose],
+                          style: const TextStyle(
+                              color: Color(0xff10275a),
+                              fontFamily: 'Shuhei',
+                              fontWeight: FontWeight.w800),
+                        ))
+            ],
+          ),
+        ));
   }
 }
