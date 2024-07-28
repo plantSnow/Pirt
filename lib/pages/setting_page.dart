@@ -15,9 +15,9 @@ class SettingPage extends StatelessWidget {
       ),
       body: ListView(
         padding: const EdgeInsets.all(20),
-        children: const [
-          SettingLanguage(),
-          Divider(
+        children: [
+          const SettingLanguage(),
+          const Divider(
             color: Colors.white,
           ),
           SettingNotice()
