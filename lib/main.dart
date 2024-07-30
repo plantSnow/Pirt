@@ -22,7 +22,6 @@ class MyApp extends StatelessWidget {
       ),
       // 导航路径注册
       routes: {
-        // "/": (context) => const Scaffold(body: Calendar(calendarType: 0,)), //默认主界面
         "/": (context) => const MyNavigation(), //默认主界面
         "add_plan_page": (context) => const AddPlan(),
         "calendar":(context) => const Scaffold(body: Calendar(calendarType: 0,)), 
