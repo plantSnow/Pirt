@@ -22,17 +22,18 @@ class SettingLanguage extends StatelessWidget {
                     fontWeight: FontWeight.w600),
               ),
               Divider(
-                indent: 10,
+                // indent: 10,
                 thickness: 1,
                 height: 20,
               ),
-              //TODO：做右侧的展开切换语言？真的能有别的语言吗） Hero动画应该是 //语言不切换了, 这个做成死的, 看到了把这条删掉
-              Text(
-                "   简体中文",
-                style: TextStyle(
-                    height: 2,
-                    color: Color.fromARGB(255, 29, 29, 32),
-                    fontSize: 16),
+              ListTile(
+                leading: Text(
+                  "简体中文",
+                  style: TextStyle(
+                      height: 2,
+                      color: Color.fromARGB(255, 29, 29, 32),
+                      fontSize: 16),
+                ),
               ),
             ]),
           ),

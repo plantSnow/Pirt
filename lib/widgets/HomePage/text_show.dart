@@ -6,31 +6,39 @@ class TextShow extends StatelessWidget {
 
   const TextShow({super.key, required this.boldText, required this.text});
 
-
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.end,
-        children: [
-          Text(
-            boldText, 
-            style: const TextStyle(
-              fontSize: 24, 
-              fontFamily: 'ShuHei', 
-              color: Color(0xff12175e), 
+    return Padding(
+      padding: const EdgeInsets.only(left: 16.0, right: 10.0, bottom: 6),
+      child: SizedBox(
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: [
+            Text(
+              boldText,
+              style: const TextStyle(
+                fontSize: 24,
+                fontFamily: 'ShuHei',
+                color: Color.fromARGB(255, 66, 73, 178),
+              ),
             ),
-          ), 
-          const Expanded(child: SizedBox(child: Divider(),)),
-          Text(
-            text, 
-            style: const TextStyle(
-              fontSize: 11,
-              fontFamily: 'YuYang',
-              color: Color(0xff69696c), 
-            ),
-          )
-        ],
+            const Expanded(
+                child: SizedBox(
+              child: Divider(
+                height: 20,
+                thickness: 1,
+              ),
+            )),
+            Text(
+              text,
+              style: const TextStyle(
+                fontSize: 11,
+                fontFamily: 'YuYang',
+                color: Color(0xff69696c),
+              ),
+            )
+          ],
+        ),
       ),
     );
   }

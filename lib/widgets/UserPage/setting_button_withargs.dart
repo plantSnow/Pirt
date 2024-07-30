@@ -1,12 +1,12 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:pirt/pages/setting_page.dart';
+// import 'package:pirt/pages/setting_page.dart';
 
 // 用户页面的五个按钮, 参数 btnChoose 的值取0~4对应了5个不同按钮, 带参数只使用 0/3
 class SettingBtnWithArgs extends StatelessWidget {
   final int btnChoose;
   final int numToShow;
-  const SettingBtnWithArgs({super.key, required this.btnChoose, required  this.numToShow});
+  const SettingBtnWithArgs(
+      {super.key, required this.btnChoose, required this.numToShow});
 
   static const List colorsToBeUsed = [
     [Color(0x3f858fe9), Color(0xff858fe9)],
@@ -30,77 +30,73 @@ class SettingBtnWithArgs extends StatelessWidget {
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.of(context).size.height;
     double screenWidth = MediaQuery.of(context).size.width;
-    
+
     return RawMaterialButton(
-      onPressed: () {
-        // 根据按钮传入的btnchoose值转到不同的界面
-        switch (btnChoose) {
-          case 0:
-          case 3:
-            Navigator.push(
-              context,
-              CupertinoPageRoute(
-                builder: (context) => const SettingPage(),
-              ));
-            break;
-        }
-      },
-      child: Container(
-        height: (138 / 812) * screenHeight,
-        width: (138 / 375) * screenWidth,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20),
-          color: colorsToBeUsed[btnChoose][0],
-        ),
-        child: Stack(
-          children: [
-            Align(
-              alignment: const Alignment(0, -0.6),
-              child: Container(
-                width: (48 / 375) * screenWidth,
-                height: (48 / 812) * screenHeight,
-                decoration: BoxDecoration(
-                  color: colorsToBeUsed[btnChoose][1],
-                  borderRadius: BorderRadius.circular(8)),
-                child: Icon(
-                  iconList[btnChoose],
-                  color: Colors.white,
-                ),
-              )
-            ),
-            Align(
-              alignment: Alignment(0, (btnChoose == 0 || btnChoose == 3) ? 0.7 : 0.5),
-              child: ((btnChoose == 0) || (btnChoose == 3)) 
-                ? SizedBox(
-                  height: (48 / 812) * screenHeight,
-                  child: Column(children: [
-                    Text(
-                      btnText[btnChoose],
-                      style: const TextStyle(
-                        color: Color(0xff10275a),
-                        fontFamily: 'Shuhei',
-                        fontWeight: FontWeight.w800
-                      ),
+        onPressed: () {
+          // 根据按钮传入的btnchoose值转到不同的界面
+          switch (btnChoose) {
+            case 0:
+            case 3:
+            // Navigator.push(
+            //   context,
+            //   CupertinoPageRoute(
+            //     builder: (context) => const SettingPage(),
+            //   ));
+            // break;
+          }
+        },
+        child: Container(
+          height: (138 / 812) * screenHeight,
+          width: (138 / 375) * screenWidth,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20),
+            color: colorsToBeUsed[btnChoose][0],
+          ),
+          child: Stack(
+            children: [
+              Align(
+                  alignment: const Alignment(0, -0.6),
+                  child: Container(
+                    width: (48 / 375) * screenWidth,
+                    height: (48 / 812) * screenHeight,
+                    decoration: BoxDecoration(
+                        color: colorsToBeUsed[btnChoose][1],
+                        borderRadius: BorderRadius.circular(8)),
+                    child: Icon(
+                      iconList[btnChoose],
+                      color: Colors.white,
                     ),
-                    Text(
-                      btnChoose == 0
-                        ? '总数： $numToShow'
-                        : '点亮： $numToShow', 
-                      style: const TextStyle(color: Color(0xff393939)),
-                    ),
-                  ])
-                )
-                : Text(
-                    btnText[btnChoose],
-                    style: const TextStyle(
-                      color: Color(0xff10275a),
-                      fontFamily: 'Shuhei',
-                      fontWeight: FontWeight.w800),
-                )
-            )
-          ],
-        ),
-      )
-    );
+                  )),
+              Align(
+                  alignment: Alignment(
+                      0, (btnChoose == 0 || btnChoose == 3) ? 0.7 : 0.5),
+                  child: ((btnChoose == 0) || (btnChoose == 3))
+                      ? SizedBox(
+                          height: (48 / 812) * screenHeight,
+                          child: Column(children: [
+                            Text(
+                              btnText[btnChoose],
+                              style: const TextStyle(
+                                  color: Color(0xff10275a),
+                                  fontFamily: 'Shuhei',
+                                  fontWeight: FontWeight.w800),
+                            ),
+                            Text(
+                              btnChoose == 0
+                                  ? '总数： $numToShow'
+                                  : '点亮： $numToShow',
+                              style: const TextStyle(color: Color(0xff393939)),
+                            ),
+                          ]))
+                      : Text(
+                          btnText[btnChoose],
+                          style: const TextStyle(
+                              color: Color(0xff10275a),
+                              fontFamily: 'Shuhei',
+                              fontWeight: FontWeight.w800),
+                        ))
+            ],
+          ),
+        ));
   }
 }
