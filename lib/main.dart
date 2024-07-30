@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+// import 'package:flutter_localizations/flutter_localizations.dart'
 import './widgets/HomePage/calendar.dart';
 import './pages/add_plan_page.dart';
 import './widgets/HomePage/navigation_bar.dart';
@@ -7,7 +8,7 @@ void main() {
   runApp(const MyApp());
 }
 
-// TODO: 用 Local, 自动兼容中文语言包, 否则日历的月份表示是英语的改不了
+// TODO: 用 Locale, 自动兼容中文语言包, 否则日历的月份表示是英语的改不了
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 

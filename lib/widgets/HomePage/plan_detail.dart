@@ -106,15 +106,6 @@ class PlanDetails extends StatelessWidget {
     ['地点查询', '闹钟设置'], 
   ];
 
-  void _gotoCalendar(BuildContext context) {
-    Navigator.of(context).push(MaterialPageRoute<void>(
-      builder: (BuildContext context) => const Scaffold(
-        body: Center(
-          child: Calendar(calendarType: 0)
-        ),
-      ),
-    ));
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -170,14 +161,7 @@ class PlanDetails extends StatelessWidget {
             right: (5/375)*screenWidth,
             top: (5/812)*screenHeight,
             // 右上角按钮, 弹出详细介绍窗口  
-            child: IconButton(
-              iconSize: 20,
-              onPressed: () => _gotoCalendar(context), //TODO: 日历大小未能调整, 弹出的是一个页面, 加上了脚手架 Scaffold
-              icon: const Icon(
-                Icons.book, 
-                color: Color(0xff9aa8c7),
-              )
-            ), 
+            child: const Calendar(calendarType: 2,)
           ), 
           // 右下角图标按钮, 新增活动
           Positioned(
