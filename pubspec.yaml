@@ -118,9 +118,10 @@ flutter:
       fonts:
         - asset: assets/fonts/cn/DingTalk-JinBuTi.ttf
 
-    - family: MyIcons
+    - family: myIcon
       fonts:
         - asset: assets/icons/home/home.ttf
         - asset: assets/icons/details/details.ttf
+        - asset: assets/icons/calendar/calendar.ttf
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
