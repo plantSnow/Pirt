@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../widgets/HomePage/calendar.dart';
+// import '../../widgets/HomePage/calendar.dart';
 
 // 文字与图标显示
 class NameAndTimeinPlanDetails extends StatelessWidget {
@@ -179,7 +179,13 @@ class PlanDetails extends StatelessWidget {
               right: (5/375)*screenWidth,
               top: (5/812)*screenHeight,
               // 右上角按钮, 弹出详细介绍窗口  
-              child: const Calendar(calendarType: 2,)
+              child: IconButton(
+                onPressed: (){},
+                icon: const Icon(
+                  Icons.arrow_circle_right_outlined, 
+                  color: Color(0xff9aa8c7),
+                )
+              )//const Calendar(calendarType: 2,)
             ), 
             // 右下角图标按钮, 新增活动
             Positioned(

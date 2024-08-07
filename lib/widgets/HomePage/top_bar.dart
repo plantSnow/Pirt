@@ -4,13 +4,18 @@ import 'package:flutter/material.dart';
 class TopBar extends StatefulWidget {
   final String greetingText;
   final String userChangableText;
-  const TopBar(
-      {super.key, required this.greetingText, required this.userChangableText});
+  const TopBar({
+    super.key, 
+    required this.greetingText, 
+    required this.userChangableText
+  });
 
   @override
   // ignore: no_logic_in_create_state
   State<TopBar> createState() => _TopBarState(
-      greetingText: greetingText, userChangableText: userChangableText);
+    greetingText: greetingText, 
+    userChangableText: userChangableText
+  );
 }
 
 class _TopBarState extends State<TopBar> {

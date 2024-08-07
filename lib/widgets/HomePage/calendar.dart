@@ -138,7 +138,7 @@ class _CalendarState extends State<Calendar> {
           }
         });
       }, 
-      icon: const Icon(Icons.calendar_month_outlined,color: Colors.black,)
+      icon: const Icon(Icons.calendar_month_outlined,color: Color(0xff5b67ca),)
     );
   }
 }
