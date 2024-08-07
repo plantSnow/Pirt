@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 // TODO: 稀烂的, 功能完全没做出来, 这只是个图形, 这根条不太能做啊
+// TODO：用carousel轮播来实现这个对未来与过去旅程的观看 https://m3.material.io/components/carousel/guidelines#13b90133-e09f-41e1-b707-53f4ab2f54ef
 // 紫色框框下面那根进度条
 class InfoArrow extends StatefulWidget {
   const InfoArrow({super.key});
