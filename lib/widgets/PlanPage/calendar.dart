@@ -36,12 +36,12 @@ class _CalendarState extends State<Calendar> {
     }
 
     //工作日文本样式
-    const dayTextStyle = TextStyle(color: Colors.black, fontWeight: FontWeight.w700);
+    const dayTextStyle = TextStyle(color: Color(0xff333333), fontWeight: FontWeight.w700);
     //周末文本样式
-    final weekendTextStyle = TextStyle(color: Colors.grey[500], fontWeight: FontWeight.w600);
+    const weekendTextStyle = TextStyle(color: Color(0xff666666), fontWeight: FontWeight.w600);
     //与当前日期相同的日期
-    final anniversaryTextStyle = TextStyle(
-      color: Colors.red[400],
+    const anniversaryTextStyle = TextStyle(
+      color: Colors.black,
       fontWeight: FontWeight.w700,
     );
 
@@ -53,7 +53,7 @@ class _CalendarState extends State<Calendar> {
       calendarType: calendarChoose,
       
       //所选日期的突出显示颜色
-      selectedDayHighlightColor: Colors.purple[800],
+      selectedDayHighlightColor:const Color(0xff5b67ca),
       
       //用户点击取消按钮后关闭对话框
       closeDialogOnCancelTapped: true,
@@ -63,7 +63,7 @@ class _CalendarState extends State<Calendar> {
       
       // 自定义文本标签
       weekdayLabels: ['日', '一', '二', '三', '四', '五', '六'], 
-
+      
       //工作日标签的自定义文本样式
       weekdayLabelTextStyle: const TextStyle(
         color: Colors.black87,
@@ -86,6 +86,8 @@ class _CalendarState extends State<Calendar> {
       //选定日历日文本的自定义文本样式
       selectedDayTextStyle: dayTextStyle.copyWith(color: Colors.white),
       
+      daySplashColor: Colors.transparent,
+
       //提供对日历日文本样式的完全控制的功能
       dayTextStylePredicate: ({required date}) {
         TextStyle? textStyle;
@@ -138,7 +140,10 @@ class _CalendarState extends State<Calendar> {
           }
         });
       }, 
-      icon: const Icon(Icons.calendar_month_outlined,color: Color(0xff5b67ca),)
+      icon: const Icon(
+        Icons.calendar_month_outlined, 
+        color: Color(0xff525f77), 
+      )
     );
   }
 }
