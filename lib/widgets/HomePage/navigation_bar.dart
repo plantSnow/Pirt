@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:animations/animations.dart';
 import '../../pages/first_page.dart';
 import '../../pages/home_page.dart';
+import '../../pages/plan_page.dart';
 import '../../pages/user_page.dart';
 
 class MyNavigation extends StatefulWidget {
@@ -17,7 +18,8 @@ class _MyNavigationState extends State<MyNavigation> {
     const HomePage(
       info: '出行时间 - 2024/3/2\n距今还有 11 天\n目的地 - 广东/深圳\n天气： 获取中···',
     ),
-    const FistEnterPage(),
+    const PlanPage(),
+    const FistEnterPage(), 
     const User(),
   ];
 
@@ -41,14 +43,7 @@ class _MyNavigationState extends State<MyNavigation> {
         backgroundColor: Colors.white,
         animationDuration: const Duration(milliseconds: 500),
         onDestinationSelected: (int index) {
-          setState(() {
-            currentPageIndex = index;
-            // if (index == 0 || index == 2) {
-            //   _currentPageIndex = index;
-            // } else {
-            //   Navigator.pushNamed(context, "add_plan_page");
-            // }
-          });
+          setState(() => currentPageIndex = index);
         },
         indicatorColor: const Color(0xff5b67ca),
         indicatorShape: const RoundedRectangleBorder(
@@ -69,11 +64,11 @@ class _MyNavigationState extends State<MyNavigation> {
           ),
           NavigationDestination(
             selectedIcon: Icon(
-              Icons.add_box,
+              Icons.description_outlined,
               color: Colors.white,
             ),
             icon: Icon(
-              Icons.add_box_outlined,
+              Icons.description_outlined,
               color: Color(0xffc6cedd),
             ),
             label: '新建',
@@ -87,8 +82,19 @@ class _MyNavigationState extends State<MyNavigation> {
               Icons.account_circle_outlined,
               color: Color(0xffc6cedd),
             ),
-            label: '设置',
+            label: '社区',
           ),
+          NavigationDestination(
+            selectedIcon: Icon(
+              Icons.settings, 
+              color: Colors.white, 
+            ),
+            icon: Icon(
+              Icons.settings, 
+              color: Color(0xffc6cedd),
+            ), 
+            label: '设置', 
+          )
         ],
       ),
     );

@@ -1,22 +1,25 @@
 import 'package:flutter/material.dart';
-import '../../widgets/HomePage/calendar.dart';
 
 // 文字与图标显示
-class NameAndTimeinPlanDetails extends StatelessWidget {
+class NameAndTimeinPlanDetailsWithIcon extends StatelessWidget {
   final int displayType;
   final String title;
   final String time;
-  const NameAndTimeinPlanDetails(
-      {super.key,
-      required this.title,
-      required this.time,
-      required this.displayType});
+  final int sizeType;
+  const NameAndTimeinPlanDetailsWithIcon({
+    super.key,
+    required this.title,
+    required this.time,
+    required this.displayType, 
+    required this.sizeType, 
+  });
 
   static const colorList = [
     Color(0xff8f99eb),
     Color(0xffe88b8c),
     Color(0xff1ec1c3)
   ];
+
   static const iconList = [
     Icons.train_rounded,
     Icons.hotel_rounded,
@@ -29,33 +32,74 @@ class NameAndTimeinPlanDetails extends StatelessWidget {
     double screenWidth = MediaQuery.of(context).size.width;
 
     return SizedBox(
-        width: (300 / 375) * screenWidth,
-        height: (60 / 812) * screenHeight,
-        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          Text(
-            title,
-            style: const TextStyle(
-              color: Color(0xff2c406e),
-              fontSize: 16,
-              fontWeight: FontWeight.w500,
-            ),
+      width: sizeType==0 
+        ? (300 / 375) * screenWidth 
+        : (70 / 375) * screenWidth,
+      height: (60 / 812) * screenHeight,
+      child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+        Text(
+          title,
+          style: const TextStyle(
+            color: Color(0xff2c406e),
+            fontSize: 16,
+            fontWeight: FontWeight.w500,
           ),
-          Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
-            Icon(
-              iconList[displayType],
-              color: colorList[displayType],
-            ),
-            SizedBox(
-              child: Text(
-                time,
-                style: const TextStyle(
-                  color: Color(0xff9aa8c7),
-                  fontSize: 14,
-                ),
+        ),
+        sizeType==0 ? Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
+          Icon(
+            iconList[displayType],
+            color: colorList[displayType],
+          ),
+          SizedBox(
+            child: Text(
+              time,
+              style: const TextStyle(
+                color: Color(0xff9aa8c7),
+                fontSize: 14,
               ),
             ),
-          ])
-        ]));
+          ),
+        ]) : Text(
+          time,
+          style: const TextStyle(
+            color: Color(0xff9aa8c7),
+            fontSize: 14,
+          ),
+        ),
+      ])
+    );
+  }
+}
+
+// 窄条
+class LeftNarrowBar extends StatelessWidget {
+  final int displayType;
+  // final double barWidth;
+  final double barHeight;
+  const LeftNarrowBar({
+    super.key,
+    required this.displayType, 
+    // required this.barWidth, 
+    required this.barHeight, 
+    });
+
+  static const colorsToBeChosen = [
+    [Color(0x338f99eb), Color(0xff8f99eb)],
+    [Color(0x33e88b8c), Color(0xffe88b8c)],
+    [Color(0x331ec1c3), Color(0xff1ec1c3)],
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    return Container(
+      margin: EdgeInsets.only(right: (10/375)*screenWidth),
+      width: (3 / 375) * screenWidth,
+      height: barHeight,
+      decoration: BoxDecoration(
+        color: colorsToBeChosen[displayType][1],
+        borderRadius: BorderRadius.circular(15)),
+    );
   }
 }
 
@@ -64,18 +108,36 @@ class NameAndTimeinPlanDetails extends StatelessWidget {
 class MyTextButton extends StatelessWidget {
   final String textForButton;
   final List colorsForButton;
-
-  const MyTextButton(
-      {super.key, required this.textForButton, required this.colorsForButton});
+  final int sizeType;
+  const MyTextButton({
+    super.key, 
+    required this.textForButton, 
+    required this.colorsForButton, 
+    required this.sizeType, 
+  });
 
   @override
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.of(context).size.height;
     double screenWidth = MediaQuery.of(context).size.width;
+    late double btnWidth;
+    late double btnHeight;
+
+    switch(sizeType) {
+      case 0: 
+        btnWidth = (70/375)*screenWidth;
+        btnHeight = (33/812)*screenHeight;
+        break;
+      // case 1: 
+      //   btnWidth = (40/375)*screenWidth;
+      //   btnHeight = (30/812)*screenHeight;
+      default: 
+        break;
+    }
 
     return SizedBox(
-      width: (70 / 375) * screenWidth,
-      height: (33 / 812) * screenHeight,
+      width: btnWidth,
+      height: btnHeight,
       child: TextButton(
         onPressed: () {},
         style: TextButton.styleFrom(
@@ -129,57 +191,69 @@ class PlanDetails extends StatelessWidget {
     return Container(
           width: (325 / 375) * screenWidth,
           height: (120 / 812) * screenHeight,
+          margin: EdgeInsets.all((5/812)*screenHeight),
+          padding: EdgeInsets.all((5/375)*screenWidth),
           decoration: BoxDecoration(
-            color: const Color(0xfff8fafc),
+            color: const Color(0xfff5f8fd),
             borderRadius: BorderRadius.circular(15),
-            // border: Border.all(color: colorsToBeChosen[displayType][0]),
+            // boxShadow: const [
+              
+              // BoxShadow(blurRadius: 0.2)
+            // ]  
           ),
           child: Stack(children: [
             Positioned(
               left: (7.5 / 375) * screenWidth,
               top: (10 / 812) * screenHeight,
               child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Row(children: [
-                      // 左侧竖条
-                      Container(
-                        width: (3 / 375) * screenWidth,
-                        height: (40 / 812) * screenHeight,
-                        margin: const EdgeInsets.only(right: 10),
-                        decoration: BoxDecoration(
-                            color: colorsToBeChosen[displayType][1],
-                            borderRadius: BorderRadius.circular(15)),
-                      ),
-                      // 文字与图标展示, 抽离成 StatelessWidget
-                      NameAndTimeinPlanDetails(
-                        title: titleByUser,
-                        time: timeByUser,
-                        displayType: displayType,
-                      ),
-                    ]),
-                    Row(children: [
-                      MyTextButton(
-                          textForButton: textForThisButton[displayType][0],
-                          colorsForButton: colorsToBeChosen[displayType]),
-                      SizedBox(
-                        width: (15 / 375) * screenWidth,
-                      ),
-                      MyTextButton(
-                          textForButton: textForThisButton[displayType][1],
-                          colorsForButton: colorsToBeChosen[displayType]),
-                      SizedBox(
-                        width: (100 / 375) * screenWidth,
-                      ),
-                    ])
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(children: [
+                    // 左侧竖条
+                    LeftNarrowBar(
+                      displayType: displayType, 
+                      barHeight: (40/812)*screenHeight), 
+                    // 文字与图标展示, 抽离成 StatelessWidget
+                    NameAndTimeinPlanDetailsWithIcon(
+                      title: titleByUser,
+                      time: timeByUser,
+                      displayType: displayType,
+                      sizeType: 0,
+                    ),
                   ]),
+                  Row(children: [
+                    MyTextButton(
+                      textForButton: textForThisButton[displayType][0],
+                      colorsForButton: colorsToBeChosen[displayType], 
+                      sizeType: 0,
+                    ),  
+                    SizedBox(
+                      width: (15 / 375) * screenWidth,
+                    ),
+                    MyTextButton(
+                      textForButton: textForThisButton[displayType][1],
+                      colorsForButton: colorsToBeChosen[displayType], 
+                      sizeType: 0,
+                    ),
+                    SizedBox(
+                      width: (100 / 375) * screenWidth,
+                    ),
+                  ])
+                ]
+              ),
             ), 
           // 右上角图标按钮, 详细信息
             Positioned(
               right: (5/375)*screenWidth,
               top: (5/812)*screenHeight,
               // 右上角按钮, 弹出详细介绍窗口  
-              child: const Calendar(calendarType: 2,)
+              child: IconButton(
+                onPressed: (){},
+                icon: const Icon(
+                  Icons.arrow_circle_right_outlined, 
+                  color: Color(0xff9aa8c7),
+                )
+              )//const Calendar(calendarType: 2,)
             ), 
             // 右下角图标按钮, 新增活动
             Positioned(

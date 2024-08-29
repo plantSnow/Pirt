@@ -19,7 +19,7 @@ class TextShow extends StatelessWidget {
               style: const TextStyle(
                 fontSize: 24,
                 fontFamily: 'ShuHei',
-                color: Color.fromARGB(255, 66, 73, 178),
+                color: Color(0xff12175e)//Color.fromARGB(255, 66, 73, 178),
               ),
             ),
             const Expanded(

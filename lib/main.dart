@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-// import 'package:flutter_localizations/flutter_localizations.dart'
-import './widgets/HomePage/calendar.dart';
-import './pages/add_plan_page.dart';
-import './widgets/HomePage/navigation_bar.dart';
+import 'pages/add_plan_page.dart';
+import 'widgets/HomePage/navigation_bar.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,16 +14,23 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Pirt Trip',
-      debugShowCheckedModeBanner: false, // 删去右上角的 Debug
+      debugShowCheckedModeBanner: false, // 删去右上角的 Debug 标志
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.white), // 主题颜色白色
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.white, 
+          primary: Colors.white, 
+        ), // 主题颜色白色
         useMaterial3: true,
+        datePickerTheme: const DatePickerThemeData(
+          surfaceTintColor: Colors.transparent, 
+          headerBackgroundColor: Colors.white,
+          backgroundColor: Colors.white
+        )
       ),
       // 导航路径注册
       routes: {
         "/": (context) => const MyNavigation(), //默认主界面
         "add_plan_page": (context) => const AddPlan(),
-        "calendar":(context) => const Scaffold(body: Calendar(calendarType: 0,)), 
       },
       // 当没找到路由名称时使用onGenerate的方法
       // onGenerateRoute: (settings) {
