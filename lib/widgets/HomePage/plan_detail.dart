@@ -41,6 +41,7 @@ class NameAndTimeinPlanDetailsWithIcon extends StatelessWidget {
           title,
           style: const TextStyle(
             color: Color(0xff2c406e),
+            fontFamily: 'DingTalk', 
             fontSize: 16,
             fontWeight: FontWeight.w500,
           ),

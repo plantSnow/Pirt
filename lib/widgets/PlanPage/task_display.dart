@@ -3,7 +3,14 @@ import '../HomePage/plan_detail.dart';
 
 class TaskDisplay extends StatelessWidget {
   final int displayType;
-  const TaskDisplay({super.key, required this.displayType});
+  final String title;
+  final String time;
+  const TaskDisplay({
+    super.key, 
+    required this.displayType, 
+    required this.title, 
+    required this.time, 
+  });
 
   static const colorsToBeChosen = [
     [Color(0x338f99eb), Color(0xff8f99eb)],
@@ -44,8 +51,8 @@ class TaskDisplay extends StatelessWidget {
                   barHeight: (57/812)*screenHeight
                 ), 
                 NameAndTimeinPlanDetailsWithIcon(
-                  title: '宝安机场', 
-                  time: '7:00', 
+                  title: title, 
+                  time: time, 
                   displayType: displayType, 
                   sizeType: 1
                 ),  

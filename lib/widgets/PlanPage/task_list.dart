@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import './task_display.dart';
 
 class TaskList extends StatelessWidget {
@@ -8,12 +10,26 @@ class TaskList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {  
     double screenHeight = MediaQuery.of(context).size.height;
-    double screenWidth = MediaQuery.of(context).size.width;
+    // double screenWidth = MediaQuery.of(context).size.width;
     return SizedBox(
       height: (356/812)*screenHeight,
       child: ListView(
-        children: const [
-          TaskDisplay(displayType: 0), 
+        scrollDirection: Axis.vertical,
+        children: [
+          SizedBox(
+            height: (117/812)*screenHeight,
+            // width: screenWidth,
+            child: ListView(
+              scrollDirection: Axis.horizontal,
+              children: const [
+                TaskDisplay(
+                  displayType: 0, 
+                  title: '宝安机场',
+                  time: '7: 00'
+                ), 
+              ]
+            )
+          )
         ]
       )
     );

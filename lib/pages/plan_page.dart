@@ -23,7 +23,7 @@ class _PlanPageState extends State<PlanPage> {
       setState(() {
         planSearch = value;
       });
-      // print('${planSearch}1');//TODO: 参数传出成功, 但是无法即时渲染组件
+      print('${planSearch}1'); //TODO: 参数传出成功, 但是无法即时渲染组件
     }
     return SizedBox(
       width: screenWidth,
