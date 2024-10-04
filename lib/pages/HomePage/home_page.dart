@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import '../widgets/HomePage/info_display.dart';
-import '../widgets/HomePage/top_bar.dart';
-import '../widgets/HomePage/text_show.dart';
-import '../widgets/HomePage/plan_detail.dart';
+import '../../widgets/HomePage/info_display.dart';
+import '../../widgets/HomePage/top_bar.dart';
+import '../../widgets/HomePage/text_show.dart';
+import '../../widgets/HomePage/plan_detail.dart';
+import '../../services/args.dart';
 
 class HomePage extends StatelessWidget {
   // 这是传向紫色框框的参数信息 info , 暂定假设为字符串类型
@@ -20,11 +21,11 @@ class HomePage extends StatelessWidget {
       // TODO: 这里的页面滑动方式不对
       child: ListView(
         children: [
-          const TopBar(
+          TopBar(
             // 这是传向蓝色框框的文案
             // TODO: 后端传入数据, 与时间有关
-            greetingText: "早上好，种下大雪",
-            userChangableText: "可自定义文案",
+            greetingText: "早上好，$argUserName",
+            userChangableText: argPersonalQuote,
           ),  
           SizedBox(
             height: (50/812)*screenHeight,), 

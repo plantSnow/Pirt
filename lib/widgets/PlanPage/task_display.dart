@@ -32,7 +32,7 @@ class TaskDisplay extends StatelessWidget {
         child: Stack(children: [ 
           Container(
             width: (180/375)*screenWidth,
-            height: (117/812)*screenHeight,
+            height: (120/812)*screenHeight,
             margin: EdgeInsets.all((10/375)*screenHeight),
             decoration: BoxDecoration(
               color: const Color(0xfff5f8fd), 
@@ -48,7 +48,7 @@ class TaskDisplay extends StatelessWidget {
                 // 左侧竖条
                 LeftNarrowBar(
                   displayType: displayType, 
-                  barHeight: (57/812)*screenHeight
+                  barHeight: (30/812)*screenHeight
                 ), 
                 NameAndTimeinPlanDetailsWithIcon(
                   title: title, 

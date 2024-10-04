@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import '../../services/args.dart';
 
 class UserPhoto extends StatelessWidget {
   final String userName;
   final String personalQuote;
+  final Widget profilePhoto;
 
-  const UserPhoto({super.key, required this.userName, required this.personalQuote});
+  const UserPhoto({super.key, required this.userName, required this.personalQuote, required this.profilePhoto});
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +37,7 @@ class UserPhoto extends StatelessWidget {
               ),
               child: ClipOval(
                 child: Image.asset(
-                  'assets/images/pirt_logo.png', 
+                  argProfilePhotoPath, 
                   fit: BoxFit.contain,
                 ),
               )

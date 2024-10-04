@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../widgets/SettingPage/setting_language.dart';
-import '../widgets/SettingPage/setting_notice.dart';
+import '../../widgets/UserPage/SettingPage/setting_language.dart';
+import '../../widgets/UserPage/SettingPage/setting_notice.dart';
 
 class SettingPage extends StatelessWidget {
   const SettingPage({super.key});

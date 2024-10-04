@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'pages/add_plan_page.dart';
-import 'widgets/HomePage/navigation_bar.dart';
+import 'pages/PlanPage/add_plan_page.dart';
+import 'widgets/navigation_bar.dart';
 
 void main() {
   runApp(const MyApp());

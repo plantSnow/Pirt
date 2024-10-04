@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../services/args.dart';
 
 // 首页顶部蓝色的框框
 class TopBar extends StatefulWidget {
@@ -84,8 +85,7 @@ class _TopBarState extends State<TopBar> {
                             top: 1,
                             bottom: 2,
                           ),
-                          child: const Icon(Icons
-                              .person) //Image.asset('assets\\images\\pirt_logo.png'),
+                          child: Image.asset(argProfilePhotoPath)//Image.asset('assets\\images\\logo.png'),
                           ),
                     ),
                   ),
@@ -110,9 +110,10 @@ class _TopBarState extends State<TopBar> {
             child: Text(
               greetingText,
               style: const TextStyle(
-                  color: Color(0xff12175e),
-                  fontSize: 28,
-                  fontWeight: FontWeight.w900),
+                color: Color(0xff12175e),
+                fontSize: 28,
+                fontWeight: FontWeight.w900
+              ),
             ),
           ),
         ],

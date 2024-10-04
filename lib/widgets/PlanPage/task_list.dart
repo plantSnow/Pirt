@@ -12,12 +12,12 @@ class TaskList extends StatelessWidget {
     double screenHeight = MediaQuery.of(context).size.height;
     // double screenWidth = MediaQuery.of(context).size.width;
     return SizedBox(
-      height: (356/812)*screenHeight,
+      height: (400/812)*screenHeight,
       child: ListView(
         scrollDirection: Axis.vertical,
         children: [
           SizedBox(
-            height: (117/812)*screenHeight,
+            height: (110/812)*screenHeight,
             // width: screenWidth,
             child: ListView(
               scrollDirection: Axis.horizontal,

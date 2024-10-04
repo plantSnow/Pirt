@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:pirt/pages/setting_page.dart';
+import '../../pages/UserPage/tools_page.dart';
+import '../../pages/UserPage/user_info_page.dart';
+import '../../pages/UserPage/setting_page.dart';
 
 // 用户页面的五个按钮, 参数 btnChoose 的值取0~4对应了5个不同按钮, 无参数使用 1/2/4
 class SettingBtn extends StatelessWidget {
@@ -35,15 +37,28 @@ class SettingBtn extends StatelessWidget {
           // 根据按钮传入的btnchoose值转到不同的界面
           switch (btnChoose) {
             case 1:
+              Navigator.push(
+                context,
+                CupertinoPageRoute(
+                  builder: (context) => const ToolsPage(),
+                )
+              );
               break;
             case 2:
+              Navigator.push(
+                context,
+                CupertinoPageRoute(
+                  builder: (context) => const UserInfoPage(),
+                )
+              );
               break;
             case 4:
               Navigator.push(
-                  context,
-                  CupertinoPageRoute(
-                    builder: (context) => const SettingPage(),
-                  ));
+                context,
+                CupertinoPageRoute(
+                  builder: (context) => const SettingPage(),
+                )
+              );
               break;
           }
         },
