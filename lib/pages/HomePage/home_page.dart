@@ -23,7 +23,7 @@ class HomePage extends StatelessWidget {
         children: [
           TopBar(
             // 这是传向蓝色框框的文案
-            // TODO: 后端传入数据, 与时间有关
+            // TODO: (早上好)后端传入数据, 与时间有关
             greetingText: "早上好，$argUserName",
             userChangableText: argPersonalQuote,
           ),  
@@ -33,7 +33,7 @@ class HomePage extends StatelessWidget {
           InfoDisplay(info: info,), 
           const TextShow(boldText: 'DAY1', text: '上拉查看全部行程安排'), // DAY${}
           const PlanDetails(titleByUser: '长沙南 - 深圳北', timeByUser: '07:25 - 10:40', displayType:  0,),
-          const PlanDetails(titleByUser: '长沙南 - 深圳北', timeByUser: '07:25 - 10:40', displayType: 1,),
+          const PlanDetails(titleByUser: '怀化南 - 长沙南', timeByUser: '07:25 - 10:40', displayType: 1,),
           const PlanDetails(titleByUser: '长沙南 - 深圳北', timeByUser: '07:25 - 10:40', displayType: 2,),
           const PlanDetails(titleByUser: '长沙南 - 深圳北', timeByUser: '07:25 - 10:40', displayType: 0,),
           const PlanDetails(titleByUser: '长沙南 - 深圳北', timeByUser: '07:25 - 10:40', displayType: 2,),        
