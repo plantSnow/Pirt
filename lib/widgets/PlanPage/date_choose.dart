@@ -30,7 +30,7 @@ class DateChoose extends StatelessWidget {
               ), 
               const Calendar(calendarType: 2,), 
               Text(
-                '${(DateTime.now().year)}/${(DateTime.now().month)}/${(DateTime.now().day)}', //TODO: 日期参数传入
+                '${(DateTime.now().year)}/${(DateTime.now().month)}/${(DateTime.now().day)}', // TODO: 日期参数传入
                 style: const TextStyle(
                   color: Color(0xff525f77),
                   fontSize: 16, 

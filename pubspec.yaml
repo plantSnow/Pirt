@@ -1,5 +1,5 @@
 name: pirt
-description: "A Freshman Project by 1003B in HITSZ"
+description: "A Freshman Project by 8,1003B in HITSZ"
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
@@ -84,6 +84,7 @@ flutter:
   #   - images/a_dot_ham.jpeg
   assets:
     - assets/images/pirt_logo.png
+    - assets/images/logo.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:pirt/widgets/UserPage/setting_button_withargs.dart';
-import '../widgets/UserPage/setting_button_nonargs.dart';
-import '../widgets/UserPage/user_photo.dart';
+import '../../widgets/UserPage/setting_button_nonargs.dart';
+import '../../widgets/UserPage/user_photo.dart';
+import '../../services/args.dart';
 
-class User extends StatelessWidget {
-  const User({super.key});
+class UserPage extends StatelessWidget {
+  const UserPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,9 +19,15 @@ class User extends StatelessWidget {
         children: [
           SizedBox(
             height: (250/812)*screenHeight,
-            child: const UserPhoto(userName: '种下大雪',personalQuote: '把酒祝东风，与君共从容...',), // TODO: 这里后端传参
+            child: UserPhoto(
+              userName: argUserName,
+              personalQuote: argPersonalQuote, 
+              profilePhoto: Image.asset(
+                argProfilePhotoPath, 
+                fit: BoxFit.contain,
+              ),
+            ), // TODO: 这里后端传参
           ), 
-          // 按钮排列, 没有使用 GridView, 没必要
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [

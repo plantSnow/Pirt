@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:animations/animations.dart';
-import '../../pages/first_page.dart';
-import '../../pages/home_page.dart';
-import '../../pages/plan_page.dart';
-import '../../pages/user_page.dart';
+import '../pages/first_page.dart';
+import '../pages/HomePage/home_page.dart';
+import '../pages/PlanPage/plan_page.dart';
+import '../pages/UserPage/user_page.dart';
 
 class MyNavigation extends StatefulWidget {
   const MyNavigation({super.key});
@@ -20,7 +20,7 @@ class _MyNavigationState extends State<MyNavigation> {
     ),
     const PlanPage(),
     const FistEnterPage(), 
-    const User(),
+    const UserPage(),
   ];
 
   @override
@@ -64,36 +64,36 @@ class _MyNavigationState extends State<MyNavigation> {
           ),
           NavigationDestination(
             selectedIcon: Icon(
-              Icons.description_outlined,
+              Icons.my_library_books_outlined, 
               color: Colors.white,
             ),
             icon: Icon(
-              Icons.description_outlined,
+              Icons.my_library_books_outlined, 
               color: Color(0xffc6cedd),
             ),
-            label: '新建',
+            label: '计划',
           ),
           NavigationDestination(
             selectedIcon: Icon(
-              Icons.account_circle,
+              Icons.edit_note_outlined,
               color: Colors.white,
             ),
             icon: Icon(
-              Icons.account_circle_outlined,
+              Icons.edit_note_outlined,
               color: Color(0xffc6cedd),
             ),
-            label: '社区',
+            label: '游记',
           ),
           NavigationDestination(
             selectedIcon: Icon(
-              Icons.settings, 
+              Icons.account_circle_outlined, 
               color: Colors.white, 
             ),
             icon: Icon(
-              Icons.settings, 
+              Icons.account_circle_outlined, 
               color: Color(0xffc6cedd),
             ), 
-            label: '设置', 
+            label: '个人', 
           )
         ],
       ),
