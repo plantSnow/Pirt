@@ -8,7 +8,6 @@ class TaskList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {  
     double screenHeight = MediaQuery.of(context).size.height;
-    double screenWidth = MediaQuery.of(context).size.width;
     return SizedBox(
       height: (356/812)*screenHeight,
       child: ListView(

@@ -15,13 +15,11 @@ class PlanPage extends StatefulWidget {
 class _PlanPageState extends State<PlanPage> {
   @override
   Widget build(BuildContext context) {
-    String planSearch='00';
     double screenHeight = MediaQuery.of(context).size.height;
     double screenWidth = MediaQuery.of(context).size.width;
 
     onSubmittedFunc(String value) {
       setState(() {
-        planSearch = value;
       });
       // print('${planSearch}1');//TODO: 参数传出成功, 但是无法即时渲染组件
     }
