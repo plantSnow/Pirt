@@ -11,7 +11,7 @@ class OKButton extends StatelessWidget {
         Navigator.maybePop(context);
       }, 
       style: const ButtonStyle(
-        backgroundColor: MaterialStatePropertyAll(Color(0xff5b67ca))
+        backgroundColor: WidgetStatePropertyAll(Color(0xff5b67ca))
       ),
       child: const Text(
         '创建', 

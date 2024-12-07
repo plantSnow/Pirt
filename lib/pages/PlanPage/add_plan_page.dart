@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+<<<<<<< HEAD:lib/pages/add_plan_page.dart
+// import 'package:flutter/widgets.dart';
+=======
+>>>>>>> 6535b9aa6b1e53fc6c18b9cf4d8393f1b561f144:lib/pages/PlanPage/add_plan_page.dart
 // import '../widgets/AddPlanPage/ok_button.dart';
 
 class AddPlan extends StatelessWidget {
