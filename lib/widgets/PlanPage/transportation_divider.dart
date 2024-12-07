@@ -28,7 +28,7 @@ class TransportationDivider extends StatelessWidget {
           ), 
           // TODO: 未能实现分割线穿过图标
           const Positioned(
-            top: ,
+            top: 0,
             child: Divider()
           )
         ],
