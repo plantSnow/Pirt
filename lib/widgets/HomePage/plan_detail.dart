@@ -36,38 +36,46 @@ class NameAndTimeinPlanDetailsWithIcon extends StatelessWidget {
         ? (300 / 375) * screenWidth 
         : (70 / 375) * screenWidth,
       height: (60 / 812) * screenHeight,
-      child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-        Text(
-          title,
-          style: const TextStyle(
-            color: Color(0xff2c406e),
-            fontFamily: 'DingTalk', 
-            fontSize: 16,
-            fontWeight: FontWeight.w500,
-          ),
-        ),
-        sizeType==0 ? Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          Icon(
-            iconList[displayType],
-            color: colorList[displayType],
-          ),
-          SizedBox(
-            child: Text(
-              time,
-              style: const TextStyle(
-                color: Color(0xff9aa8c7),
-                fontSize: 14,
-              ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start, 
+        children: [
+          Text(
+            title,
+            style: const TextStyle(
+              color: Color(0xff2c406e),
+              fontFamily: 'DingTalk', 
+              fontSize: 16,
+              fontWeight: FontWeight.w500,
             ),
           ),
-        ]) : Text(
-          time,
-          style: const TextStyle(
-            color: Color(0xff9aa8c7),
-            fontSize: 14,
+          sizeType==0 ? 
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start, 
+            children: [
+              Icon(
+                iconList[displayType],
+                color: colorList[displayType],
+              ),
+              SizedBox(
+                child: Text(
+                  time,
+                  style: const TextStyle(
+                    color: Color(0xff9aa8c7),
+                    fontSize: 14,
+                  ),
+                ),
+              ),
+            ]
+          ) : 
+          Text(
+            time,
+            style: const TextStyle(
+              color: Color(0xff9aa8c7),
+              fontSize: 14,
+            ),
           ),
-        ),
-      ])
+        ]
+      )
     );
   }
 }
@@ -129,9 +137,9 @@ class MyTextButton extends StatelessWidget {
         btnWidth = (70/375)*screenWidth;
         btnHeight = (33/812)*screenHeight;
         break;
-      // case 1: 
-      //   btnWidth = (40/375)*screenWidth;
-      //   btnHeight = (30/812)*screenHeight;
+      case 1: 
+        btnWidth = (40/375)*screenWidth;
+        btnHeight = (30/812)*screenHeight;
       default: 
         break;
     }
@@ -197,10 +205,6 @@ class PlanDetails extends StatelessWidget {
           decoration: BoxDecoration(
             color: const Color(0xfff5f8fd),
             borderRadius: BorderRadius.circular(15),
-            // boxShadow: const [
-              
-              // BoxShadow(blurRadius: 0.2)
-            // ]  
           ),
           child: Stack(children: [
             Positioned(

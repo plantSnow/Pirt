@@ -45,36 +45,40 @@ class TaskDisplay extends StatelessWidget {
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // 左侧竖条
-                LeftNarrowBar(
-                  displayType: displayType, 
-                  barHeight: (30/812)*screenHeight
-                ), 
-                NameAndTimeinPlanDetailsWithIcon(
-                  title: title, 
-                  time: time, 
-                  displayType: displayType, 
-                  sizeType: 1
-                ),  
+                Column(children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      // 左侧竖条
+                      LeftNarrowBar(
+                        displayType: displayType, 
+                        // 竖条高度
+                        barHeight: (45/812)*screenHeight
+                      ), 
+                      NameAndTimeinPlanDetailsWithIcon(
+                        title: title, 
+                        time: time, 
+                        displayType: displayType, 
+                        sizeType: 1
+                      ),  
+                    ]
+                  ), 
+                  Row(children: [
+                    // TODO: 这里用按钮无法显示文字(大小不够, 文字又不能太小)， 改成无效果的 Container 不可编辑就行了吧, 内容重新看看改改
+                    Container(
+                      height: (20/812)*screenHeight,
+                      width: (10/375)*screenWidth,
+                      color: Colors.amber,
+                    )
+                  ])
+                ]),
                 SizedBox(width: (40/375)*screenWidth), 
                 Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start, 
                   children: [
-                    // SizedBox(width: (75/375)*screenWidth,), 
                     const Icon(Icons.arrow_circle_right_outlined),  
                     SizedBox(height: (20/812)*screenHeight,), 
-                    // MyTextButton(
-                    //   textForButton: textForThisButton[displayType][0], 
-                    //   colorsForButton: colorsToBeChosen[displayType], 
-                    //   size: 1
-                    // ), 
-                    // SizedBox(width: (15/375)*screenWidth,), 
-                    // MyTextButton(
-                    //   textForButton: textForThisButton[displayType][1], 
-                    //   colorsForButton: colorsToBeChosen[displayType], 
-                    //   size: 1
-                    // )
                     const Icon(Icons.alarm)
                   ],
                 ), 
